@@ -1,0 +1,2635 @@
+{
+    "play-tracking": {
+        "build-019458c628e4e994b9904f728f77a3df": {
+            "8-31-2018": {
+                "d5effaf2-cbd6-4297-81bb-0159755b7023": {
+                    "chunks": {
+                        "46edd7ac-a185-4a9f-bea6-cb983ab42d62": {
+                            "end": 28.4013,
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 11.6001682
+                        },
+                        "5dd6bfc8-13f7-4376-aa23-a7914eb24263": {
+                            "end": 33.2455864,
+                            "id": "C2",
+                            "name": "Deevice Wakes Up",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 28.4013
+                        },
+                        "c71001aa-f9b1-4218-8218-a533fde11f66": {
+                            "id": "C1",
+                            "name": "Tell Me Your Name",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 33.25674
+                        },
+                        "c862d737-91a8-4653-9dcd-acad842dc048": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 33.25674
+                        }
+                    },
+                    "errors": {
+                        "-LLIMh3TkaAVbupohLjW": {
+                            "name": "Material doesn't have a texture property '_MainTex'",
+                            "time": 11.6001682
+                        }
+                    },
+                    "events": {
+                        "-LLIMl_u5Fj9P5fksFaP": {
+                            "name": "PowerSwitchBroken",
+                            "time": 28.4013
+                        }
+                    },
+                    "sequences": {
+                        "38ec5a44-0dab-47cb-8dee-c3a1cedf991c": {
+                            "index": 1,
+                            "start": 33.25674
+                        },
+                        "6d0502f1-0f79-492c-a664-f452f6d58ed7": {
+                            "end": 33.25674,
+                            "index": 0,
+                            "start": 11.60017
+                        }
+                    },
+                    "timelines": {
+                        "0af5999f-b74a-490d-9ebf-96fb7bcb544e": {
+                            "end": 28.3900814,
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 15.8885288
+                        },
+                        "59242a76-bb77-44d4-a493-508d1f774617": {
+                            "end": 33.267765,
+                            "name": "b1_NeutralIdle",
+                            "start": 33.25674
+                        },
+                        "6e09dfd2-a2a7-4d4e-988f-fe9be4b7bb8b": {
+                            "end": 15.8885288,
+                            "name": "b1_Setup",
+                            "start": 11.6001682
+                        },
+                        "792f36c9-c80e-4c7a-8a6f-60126f2f9e29": {
+                            "end": 33.23468,
+                            "name": "b2_DeeviceWakesUp",
+                            "start": 29.9902821
+                        },
+                        "8549c976-3327-4908-98b9-5c7b3beb11a7": {
+                            "end": 29.9790478,
+                            "name": "b1_PowerPop",
+                            "start": 28.4013
+                        },
+                        "d153c230-efbd-4927-95e4-00538c559a6e": {
+                            "name": "b1_StateYourName",
+                            "start": 33.25674
+                        }
+                    }
+                }
+            }
+        },
+        "build-565981b9f376e414c969b0a8cdaf3501": {
+            "09-01-2018": {
+                "2cae1ba3-7cda-4f84-a53a-edfbf4d9a53b": {
+                    "chunks": {
+                        "012db0b5-ff7e-4e26-bd07-a16c8371df10": {
+                            "end": 72.46839,
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 57.1845436
+                        },
+                        "12381558-90f4-4e0e-a530-b01ed058088f": {
+                            "end": 218.733765,
+                            "id": "C1",
+                            "name": "Eyes Appear",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 212.5016
+                        },
+                        "1495bf90-885e-4ddd-b334-b3801ba52042": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 77.3384857
+                        },
+                        "1826fd85-f1bb-4f24-92fb-dd2ef631b934": {
+                            "end": 426.6459,
+                            "id": "C3",
+                            "name": "Deevice Pummel Loop",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 405.050568
+                        },
+                        "20d774ff-11af-4ebe-a0ce-98d5e6399303": {
+                            "end": 448.866821,
+                            "id": "C4",
+                            "name": "Whip It",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 426.6459
+                        },
+                        "36dedffe-7b5d-474d-953d-91a8e86733fe": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 161.83107
+                        },
+                        "43158bff-0ccb-4630-b3b1-c7882d671dd5": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 244.1248
+                        },
+                        "46c0f0b1-db4d-4f7f-adfd-796af84da199": {
+                            "end": 161.796936,
+                            "id": "C14",
+                            "name": "Feed Me",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 131.175446
+                        },
+                        "49193f97-e127-4509-8cae-ec4dc2a029a2": {
+                            "end": 285.955,
+                            "id": "C5",
+                            "name": "Deevice Shuts Down",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 271.5705
+                        },
+                        "4fb98857-cf72-41a4-81ad-9e4bf722e6fb": {
+                            "end": 509.276581,
+                            "id": "C2",
+                            "name": "Pork Bun Makes Smores",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 481.097473
+                        },
+                        "50644f2b-d755-4612-b87e-c3ece4dfe420": {
+                            "end": 323.694183,
+                            "id": "C7",
+                            "name": "Trust Earned",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 317.2998
+                        },
+                        "55c4164f-3816-475a-8c16-d1ef31959932": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 241.652725
+                        },
+                        "61ebf2f1-f99e-4484-a445-881141ae4fbc": {
+                            "end": 481.097473,
+                            "id": "C1",
+                            "name": "Epiphany",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 448.8826
+                        },
+                        "62fd9e66-5d48-48e7-9bec-a306bf95e679": {
+                            "end": 534.2334,
+                            "id": "C3",
+                            "name": "Eureka",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 523.8783
+                        },
+                        "685b7a56-9a8f-4e68-91ed-8ddbb1f5cab1": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 129.487366
+                        },
+                        "772ba437-4f42-4f7b-8266-89052ae5e420": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 113.499474
+                        },
+                        "78973108-b66d-4278-8273-5f361398d3e2": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 223.5366
+                        },
+                        "7ac0dac4-d855-4b7c-bf00-c9f18fd7d4bc": {
+                            "end": 113.467155,
+                            "id": "C1",
+                            "name": "Tell Me Your Name",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 77.3384857
+                        },
+                        "82d12da8-bdda-40ca-aa7d-105bfeeee23d": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 219.550858
+                        },
+                        "85b6543e-7908-42aa-8f97-63278c4a396f": {
+                            "end": 77.31393,
+                            "id": "C2",
+                            "name": "Deevice Wakes Up",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 72.46839
+                        },
+                        "85f72260-f93a-45a9-9c5c-302adba089ce": {
+                            "end": 405.050568,
+                            "id": "C2",
+                            "name": "Beast Storms In",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 376.365417
+                        },
+                        "864df33f-fb68-453d-9158-b7ae4972b745": {
+                            "end": 376.365417,
+                            "id": "C1",
+                            "name": "Beast Approach",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 361.334717
+                        },
+                        "879f8c26-3694-4f23-825f-f30b4d4989d7": {
+                            "end": 595.9668,
+                            "id": "C6",
+                            "name": "Roasting Time",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 582.600037
+                        },
+                        "8bf552be-b013-4f35-8f36-9170d202e810": {
+                            "end": 622.6593,
+                            "id": "C7",
+                            "name": "Lights Out",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 595.9668
+                        },
+                        "985aeac5-fae2-4fe8-829e-b2842d1458cb": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 231.105972
+                        },
+                        "9c47a942-b542-4c94-9db1-e43601c1f575": {
+                            "end": 326.918365,
+                            "id": "C7.5",
+                            "name": "Post Rollover",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 324.361
+                        },
+                        "9fa9ed07-c945-432d-b491-38a04a07c326": {
+                            "end": 317.111542,
+                            "id": "C6",
+                            "name": "Under Attack",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 304.130371
+                        },
+                        "afec86b7-75e7-4c56-b195-d1c4a98fc02a": {
+                            "end": 212.48494,
+                            "id": "C10",
+                            "name": "Beacon Explained",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 165.20636
+                        },
+                        "b1087212-768f-4b88-a832-4e01aeabb53b": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 285.971619
+                        },
+                        "b1dbd7f2-3317-4c4a-bc7f-2851d7cad1ef": {
+                            "end": 523.8598,
+                            "id": "C4",
+                            "name": "Pork Bun Offers You a Smore",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 509.276581
+                        },
+                        "b7c06033-ef08-4baa-99af-e213f558969c": {
+                            "end": 582.600037,
+                            "id": "C5",
+                            "name": "Mayday",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 534.2334
+                        },
+                        "ea5e1437-6ee1-412b-9008-1eef189ba7f1": {
+                            "end": 129.4546,
+                            "id": "C11",
+                            "name": "You Feed The Fire",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 124.458549
+                        },
+                        "f7f2df5a-1ef0-40d5-9dc9-a5fb2c98d0b6": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 234.713684
+                        },
+                        "fe557b5a-032a-4e00-a449-76871460cf8e": {
+                            "end": 269.013641,
+                            "id": "C4",
+                            "name": "Startle",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 249.951
+                        }
+                    },
+                    "errors": {
+                        "-LLLnOMzJpScv4vTGMdj": {
+                            "name": "Material doesn't have a texture property '_MainTex'",
+                            "time": 57.1845436
+                        },
+                        "-LLLnkZA5tO3oTfld5gv": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 147.830627
+                        },
+                        "-LLLnnbzibNjZGpBCE0P": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 160.444214
+                        },
+                        "-LLLntOS1c0oa5ovTLd7": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 184.100464
+                        },
+                        "-LLLo5nehvQhXbxz96iU": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 234.665039
+                        },
+                        "-LLLo85o0lTdsCfx0VrU": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 244.0717
+                        },
+                        "-LLLoRXU6mku3S7K1qJ3": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 323.676178
+                        },
+                        "-LLLp8wLzbjbIfiFrfgi": {
+                            "name": "/Users/builduser/buildslave/unity/build/Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 509.2595
+                        }
+                    },
+                    "events": {
+                        "-LLLnSv81JDmcbyDdi7j": {
+                            "name": "FireFed",
+                            "time": 71.4593
+                        },
+                        "-LLLnTAs4UiehlJJxPTZ": {
+                            "name": "PowerSwitchBroken",
+                            "time": 72.46839
+                        },
+                        "-LLLnWAMpRuEgiPUMNyw": {
+                            "name": "StationSelected",
+                            "time": 84.89774
+                        },
+                        "-LLLnWnl5gTLJ1E0m2-F": {
+                            "name": "MicUsed",
+                            "time": 87.45483
+                        },
+                        "-LLLnYa1tmdWQ8iKRy5q": {
+                            "name": "FireFed",
+                            "time": 94.7725
+                        },
+                        "-LLLnbZQz1WnbRJkRTGK": {
+                            "name": "LogRemoved",
+                            "time": 110.9882
+                        },
+                        "-LLLnbsYXB29kFA5Ntli": {
+                            "name": "FireFed",
+                            "time": 112.3576
+                        },
+                        "-LLLneqyk6cZqx9H8n9G": {
+                            "name": "FireFed",
+                            "time": 124.448395
+                        },
+                        "-LLLnethQzIhYDuO9gbL": {
+                            "name": "LogRemoved",
+                            "time": 124.7156
+                        },
+                        "-LLLnf23wMrnB-xijbhs": {
+                            "name": "FireFed",
+                            "time": 125.283394
+                        },
+                        "-LLLngUD0lLZ0SdjRo3R": {
+                            "name": "FoodButtonPushed",
+                            "time": 131.175446
+                        },
+                        "-LLLngUD0lLZ0SdjRo3S": {
+                            "name": "FoodButtonPushed",
+                            "time": 131.175446
+                        },
+                        "-LLLnjl3ZtvUl4ntqa7Q": {
+                            "name": "MicUsed",
+                            "time": 144.640869
+                        },
+                        "-LLLnomPELutJGtRtEjz": {
+                            "name": "BeaconButtonPushed",
+                            "time": 165.20636
+                        },
+                        "-LLLo-agV0TVZyL-BbaW": {
+                            "name": "EnteringPhase1",
+                            "time": 212.601608
+                        },
+                        "-LLLo26SI_Sxf_-kXOVv": {
+                            "name": "CalfHides",
+                            "time": 219.536133
+                        },
+                        "-LLLo4x2gPfIt3QWEhqr": {
+                            "name": "CalfHides",
+                            "time": 231.089264
+                        },
+                        "-LLLo7X5ni_LXp2-B_zK": {
+                            "name": "CalfHides",
+                            "time": 241.634674
+                        },
+                        "-LLLo9XR_jE7H7PYoFBv": {
+                            "name": "CalfNearby",
+                            "time": 249.9348
+                        },
+                        "-LLLoEoEQXq6qNd9MliX": {
+                            "name": "EnteringPhase2",
+                            "time": 271.537384
+                        },
+                        "-LLLoEoFDw04Dtc6EoaR": {
+                            "name": "LeavingPhase1",
+                            "time": 271.537384
+                        },
+                        "-LLLoFHi6psNwC8ECj8B": {
+                            "name": "CalfEnters",
+                            "time": 273.4392
+                        },
+                        "-LLLoFbiyBRHvc0BuOUK": {
+                            "name": "CalfEnters",
+                            "time": 274.861938
+                        },
+                        "-LLLoGW-so2dkGnHUWeM": {
+                            "name": "CalfEnters",
+                            "time": 278.068573
+                        },
+                        "-LLLoLSy6lsYcdP5Al73": {
+                            "name": "EnteringPhase3",
+                            "time": 298.717651
+                        },
+                        "-LLLoLT01LZ3usWcVZSX": {
+                            "name": "LeavingPhase2",
+                            "time": 298.717651
+                        },
+                        "-LLLoMmGPupMtfs_FC5b": {
+                            "name": "AboutToAccost",
+                            "time": 304.113281
+                        },
+                        "-LLLoPyt8t_32oIxsbqH": {
+                            "name": "LeavingPhase3",
+                            "time": 317.279
+                        },
+                        "-LLLoPyyIYWvz3NF7AM6": {
+                            "name": "EnteringPhase4",
+                            "time": 317.279
+                        },
+                        "-LLLoRhJ6_jV1VgNrfe0": {
+                            "name": "RolledOver",
+                            "time": 324.3445
+                        },
+                        "-LLLoTB2XGrUDGNx1jMJ": {
+                            "name": "LogRemoved",
+                            "time": 330.3594
+                        },
+                        "-LLLoTKnLgwKd1tO0IVE": {
+                            "name": "ThrowBurningObject",
+                            "time": 331.0584
+                        },
+                        "-LLLoWieFodLICdWO92M": {
+                            "name": "FireFed",
+                            "time": 344.9051
+                        },
+                        "-LLLoX9f7Q75FBqHIFWM": {
+                            "name": "LogRemoved",
+                            "time": 346.641876
+                        },
+                        "-LLLoXTFyRFf_b2I3lgC": {
+                            "name": "FireFed",
+                            "time": 347.894379
+                        },
+                        "-LLLo_jYOwtDshK4L280": {
+                            "name": "LeavingPhase4",
+                            "time": 361.299377
+                        },
+                        "-LLLokuP_xLBVyu4FRpF": {
+                            "name": "LogRemoved",
+                            "time": 406.828674
+                        },
+                        "-LLLokuab9gT6ynSV7YK": {
+                            "name": "LogRemoved",
+                            "time": 406.8454
+                        },
+                        "-LLLol9twsBX7QiCbo82": {
+                            "name": "ThrowBurningObject",
+                            "time": 407.784119
+                        },
+                        "-LLLooPVT6qx59sqTS9a": {
+                            "name": "FireFed",
+                            "time": 421.0738
+                        },
+                        "-LLLooPYC7Um48H_ZSXR": {
+                            "name": "LogRemoved",
+                            "time": 421.090485
+                        },
+                        "-LLLoogOIVSRi-MUVODD": {
+                            "name": "FireFed",
+                            "time": 422.226074
+                        },
+                        "-LLLp3FmRJMtS-GPuLw_": {
+                            "name": "LogRemoved",
+                            "time": 486.0702
+                        },
+                        "-LLLp3H5naeJGSjuLb5z": {
+                            "name": "FireFed",
+                            "time": 486.1537
+                        },
+                        "-LLLpBuSoWZ_YZxQKiJ_": {
+                            "name": "AntennaGrabbed",
+                            "time": 521.488
+                        },
+                        "-LLLpCcv59oNaz_XQT4Q": {
+                            "name": "AntennaDropped",
+                            "time": 524.4946
+                        },
+                        "-LLLpCfSta6jTxjBN2WE": {
+                            "name": "AntennaGrabbed",
+                            "time": 524.6627
+                        },
+                        "-LLLpCho7dfSfOJagGUI": {
+                            "name": "AntennaDropped",
+                            "time": 524.8123
+                        },
+                        "-LLLpD0mYCL2lEEsWYn3": {
+                            "name": "AntennaGrabbed",
+                            "time": 526.082153
+                        },
+                        "-LLLpD_x6MuCkvEnbPqJ": {
+                            "name": "AntennaDropped",
+                            "time": 528.3208
+                        },
+                        "-LLLpDv0m86u7A0aW75B": {
+                            "name": "AntennaGrabbed",
+                            "time": 529.6575
+                        },
+                        "-LLLpEEE4ZzEtfmPGUku": {
+                            "name": "AntennaDropped",
+                            "time": 531.0435
+                        },
+                        "-LLLpEX-ahQfs9lrFEb6": {
+                            "name": "AntennaGrabbed",
+                            "time": 532.2474
+                        },
+                        "-LLLpEzaOxbuyRF5nhUF": {
+                            "name": "AntennaDropped",
+                            "time": 534.0662
+                        },
+                        "-LLLpS4ExAEXPTdgOXnj": {
+                            "name": "MarshmallowBurned",
+                            "time": 587.7457
+                        }
+                    },
+                    "sequences": {
+                        "3e879baf-76cc-432a-9250-bac902b2decc": {
+                            "end": 212.5016,
+                            "index": 1,
+                            "start": 77.33849
+                        },
+                        "a0c20677-1800-4de6-9b22-9d8e0b3eb5d7": {
+                            "end": 77.3384857,
+                            "index": 0,
+                            "start": 57.18454
+                        },
+                        "ad006d85-42f0-4229-a8a0-a0cdde7be42e": {
+                            "end": 448.8826,
+                            "index": 3,
+                            "start": 361.3347
+                        },
+                        "e7421fb3-6389-4d20-bd64-4d38d2d0d49e": {
+                            "end": 361.334717,
+                            "index": 2,
+                            "start": 212.5016
+                        },
+                        "e92fe695-2bfd-4bf9-82c5-60ef0d9796e9": {
+                            "index": 4,
+                            "start": 448.8826
+                        }
+                    },
+                    "timelines": {
+                        "04baa13a-0d74-441c-8718-0e3fa24ee36a": {
+                            "end": 77.29649,
+                            "name": "b2_DeeviceWakesUp",
+                            "start": 74.05549
+                        },
+                        "069a7690-9d7f-420e-bf5a-db491ffc3235": {
+                            "end": 509.2595,
+                            "name": "b1_PorkBunMakesSmores",
+                            "start": 481.097473
+                        },
+                        "1505cade-2209-4cd5-91a4-1d0578ef6d9b": {
+                            "end": 376.3481,
+                            "name": "c1_b1_Main",
+                            "start": 361.334717
+                        },
+                        "20bae911-b74d-4a30-ab4a-27973b72c991": {
+                            "end": 223.503433,
+                            "name": "b2_TransitionToPreStartle",
+                            "start": 221.466034
+                        },
+                        "23d66418-1cb1-447e-89c2-accf740bf217": {
+                            "end": 244.0717,
+                            "name": "b1.4_SeemsHungry",
+                            "start": 241.652725
+                        },
+                        "2dce079c-9926-4528-a593-e3a35527f077": {
+                            "end": 234.665039,
+                            "name": "b1.3_DoesNotLookGood",
+                            "start": 231.105972
+                        },
+                        "2e356088-1cb6-46df-a6b6-725e9855ef83": {
+                            "end": 137.188934,
+                            "name": "b1.1_AhYoureHungry",
+                            "start": 131.175446
+                        },
+                        "30ed146f-94b9-4d46-9008-dd3c413adf8c": {
+                            "end": 304.148926,
+                            "name": "b2_PlayDead",
+                            "start": 285.971619
+                        },
+                        "31941066-0df3-4491-a235-55829f60536b": {
+                            "end": 595.931458,
+                            "name": "b2_YouBurnedMarshmallow",
+                            "start": 587.7636
+                        },
+                        "3334274f-e6c5-4339-b84d-3c0a1783ebdf": {
+                            "end": 77.40208,
+                            "name": "b1_NeutralIdle",
+                            "start": 77.3384857
+                        },
+                        "36141215-f80d-4f5a-87f3-3ce393af20ab": {
+                            "end": 622.6429,
+                            "name": "b1_LightsOut",
+                            "start": 595.9668
+                        },
+                        "36ea025f-88cf-49bc-9769-e54d435087d7": {
+                            "end": 587.7858,
+                            "name": "b0_RoastingTimeIdle",
+                            "start": 582.600037
+                        },
+                        "3e7e0959-3d28-4819-9789-3d27d15d45c2": {
+                            "end": 84.76419,
+                            "name": "b1_StateYourName",
+                            "start": 77.3384857
+                        },
+                        "3ed68eaa-483e-478d-bd61-6141f782ebb1": {
+                            "end": 131.219345,
+                            "name": "b1_NeutralIdle",
+                            "start": 129.487366
+                        },
+                        "45bfccc3-c77a-4519-87fe-98a0909654a7": {
+                            "end": 523.84436,
+                            "name": "b1_Offer",
+                            "start": 509.276581
+                        },
+                        "471a6a0f-08d5-4edf-a521-156e1f53cf4d": {
+                            "end": 231.1232,
+                            "name": "b1_WaitingForStartle",
+                            "start": 223.5366
+                        },
+                        "4eb85847-98ea-4645-b775-3a83a7b70e79": {
+                            "end": 241.672562,
+                            "name": "b1_WaitingForStartle",
+                            "start": 234.713684
+                        },
+                        "513ae560-d1e4-4257-b470-48d51f19f827": {
+                            "end": 249.968567,
+                            "name": "b1_WaitingForStartle",
+                            "start": 244.1248
+                        },
+                        "57b94d51-a12f-4be9-840a-b6d949c5435a": {
+                            "end": 218.708145,
+                            "name": "b1_EyesAppear",
+                            "start": 212.5016
+                        },
+                        "5d4fcae3-fd06-4abf-a833-285e1b04d032": {
+                            "end": 323.676178,
+                            "name": "b1_TrustEarned",
+                            "start": 317.2998
+                        },
+                        "6a65f0f6-d343-4e5d-ad79-10e87a0865d2": {
+                            "end": 317.094269,
+                            "name": "b1_UnderAttack",
+                            "start": 304.130371
+                        },
+                        "704125fa-79a3-435b-baeb-c5dc69d42101": {
+                            "end": 72.45248,
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 59.9439163
+                        },
+                        "78edc2fd-9f2a-403b-b3b1-14c75be4b7ce": {
+                            "end": 208.928787,
+                            "name": "b3_EngineeringBots",
+                            "start": 192.5703
+                        },
+                        "7a217f1f-297c-4788-a919-3d44a4f98aef": {
+                            "end": 407.784119,
+                            "name": "b1.1_ShakeIdle",
+                            "start": 405.050568
+                        },
+                        "7ae0b4bf-afa9-4709-bf39-9319d1dc8bea": {
+                            "end": 481.080048,
+                            "name": "b1_Epiphany",
+                            "start": 448.8826
+                        },
+                        "81e9d3c5-bc86-43f3-9b85-fcbb712fd1ac": {
+                            "end": 124.475632,
+                            "name": "b1_NeutralIdle",
+                            "start": 113.499474
+                        },
+                        "8cc65a27-2873-4bae-bbab-480a6d0185fe": {
+                            "end": 184.100464,
+                            "name": "b1_TouchedBeaconButton",
+                            "start": 165.20636
+                        },
+                        "9305a0e4-6ca4-49ab-8ae2-879b385f40ae": {
+                            "end": 160.444214,
+                            "name": "b4_NourishmentCylinders",
+                            "start": 147.852448
+                        },
+                        "99f318a6-cc50-4b29-8f13-f2fdba9d0042": {
+                            "end": 165.228134,
+                            "name": "b1_NeutralIdle",
+                            "start": 161.83107
+                        },
+                        "9e1c7cb2-74bd-4885-9471-634b6103804e": {
+                            "end": 212.467651,
+                            "name": "b4.1_ThingsCouldGetUglyAlt",
+                            "start": 208.942978
+                        },
+                        "9f7ea7f7-b8d0-434a-b1d5-397bbd762917": {
+                            "end": 285.9378,
+                            "name": "b1_DeeviceShutsDown",
+                            "start": 271.5705
+                        },
+                        "a74e1263-3838-427a-b2ce-889f0e74b87a": {
+                            "end": 405.0338,
+                            "name": "c2_b1_Main",
+                            "start": 376.365417
+                        },
+                        "a94524de-8074-4a3f-bd3d-2c29b52ca39e": {
+                            "end": 267.6617,
+                            "name": "b2_Boo",
+                            "start": 249.951
+                        },
+                        "a9905732-733e-4ee0-ae2b-9eec37a7533b": {
+                            "end": 221.448334,
+                            "name": "b1.1_RightOutThere",
+                            "start": 219.550858
+                        },
+                        "c00d41f5-1a76-44ce-a046-910695e3031f": {
+                            "end": 59.9439163,
+                            "name": "b1_Setup",
+                            "start": 57.1845436
+                        },
+                        "c62c9621-5aad-4ec6-b978-0b92648f52a1": {
+                            "end": 129.436829,
+                            "name": "b1_KeepThatBurning",
+                            "start": 124.458549
+                        },
+                        "c89f574d-1e3f-4df4-a892-44556fb0bc9c": {
+                            "end": 192.553543,
+                            "name": "b2_StrangeCall",
+                            "start": 184.117477
+                        },
+                        "cac31a34-2e1a-4340-8c86-03204668ddbf": {
+                            "end": 448.84845,
+                            "name": "c4_b1_Main",
+                            "start": 426.6459
+                        },
+                        "d38993e8-2e30-4d7a-8738-2a0f7ab82c4d": {
+                            "end": 534.2168,
+                            "name": "b1_YouFoundTheAntenna",
+                            "start": 523.8783
+                        },
+                        "da214c32-e8a5-455a-9d11-e78c79594542": {
+                            "end": 147.830627,
+                            "name": "b3.2_FeedMeSloppyJoes",
+                            "start": 144.640869
+                        },
+                        "ea59e012-da84-4c7f-b248-08a1be79d257": {
+                            "end": 326.9009,
+                            "name": "b1_PostRollover",
+                            "start": 324.361
+                        },
+                        "ed25208b-e669-4f6d-ae39-dc79d77bf380": {
+                            "end": 426.629,
+                            "name": "b2_YouAreFired",
+                            "start": 407.784119
+                        },
+                        "f26c0156-bc08-48f1-9ea5-f80a78c83681": {
+                            "end": 113.449692,
+                            "name": "b3.1_HelloColonelSwitchIgnored",
+                            "start": 87.45483
+                        },
+                        "f7362fae-d2cd-4383-86f2-4bb823a1f19b": {
+                            "end": 74.03896,
+                            "name": "b1_PowerPop",
+                            "start": 72.46839
+                        },
+                        "faef6efd-85f2-46a6-972a-ef7e28453822": {
+                            "end": 582.582947,
+                            "name": "b1_Mayday",
+                            "start": 534.2334
+                        },
+                        "fefe42d9-98bf-4508-9b3d-fef8177f464a": {
+                            "end": 143.453308,
+                            "name": "b2_WellTrained",
+                            "start": 137.206039
+                        }
+                    }
+                },
+                "a676de4d-9692-46e7-9b2d-18eff52cc0cb": {
+                    "chunks": {
+                        "708bcf67-f847-4528-a62b-0970d961c2d1": {
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 61.88676
+                        }
+                    },
+                    "errors": {
+                        "-LLLty8iKyQYj2RAeHbs": {
+                            "name": "Material doesn't have a texture property '_MainTex'",
+                            "time": 61.88676
+                        }
+                    },
+                    "sequences": {
+                        "c9d37e07-dc9c-4b56-8360-a2159484d390": {
+                            "index": 0,
+                            "start": 61.88676
+                        }
+                    },
+                    "timelines": {
+                        "04ecd2af-e2d4-4a2f-a65c-7279d2d405c8": {
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 68.9773254
+                        },
+                        "1bb124c6-d812-4d71-b4b4-851f11376f60": {
+                            "end": 68.9773254,
+                            "name": "b1_Setup",
+                            "start": 61.88676
+                        }
+                    }
+                }
+            }
+        },
+        "build-a5501213ffa929746b625d0ca300490e": {
+            "8-31-2018": {
+                "6cc46588-c137-4b8c-a382-a48b82fe9f30": {
+                    "chunks": {
+                        "03bcbe1f-b877-4c0a-b4d3-2cf2f8aa91d5": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 65.99389
+                        },
+                        "07f08296-f09a-4c38-b478-1fbb2fee9c53": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 184.50769
+                        },
+                        "1c2f316c-7847-45f3-bcb0-11f2af4a6db3": {
+                            "end": 342.80957,
+                            "id": "C7.5",
+                            "name": "Post Rollover",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 340.2651
+                        },
+                        "2431d2e4-e864-460e-934b-4d69440773ea": {
+                            "end": 618.9464,
+                            "id": "C6",
+                            "name": "Roasting Time",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 605.735352
+                        },
+                        "249049f3-8315-4a2b-b79a-c678167b4106": {
+                            "end": 333.076447,
+                            "id": "C6",
+                            "name": "Under Attack",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 320.1094
+                        },
+                        "255b7c2a-000f-4a48-8962-851c6814c65d": {
+                            "end": 394.199127,
+                            "id": "C1",
+                            "name": "Beast Approach",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 379.1879
+                        },
+                        "2b046c91-ac2a-4cd8-a41f-afbe1ab977a0": {
+                            "end": 532.4565,
+                            "id": "C2",
+                            "name": "Pork Bun Makes Smores",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 504.289551
+                        },
+                        "30a52ffc-955e-4c42-b5e6-7b370eb357b4": {
+                            "id": "C7",
+                            "name": "Lights Out",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 618.9464
+                        },
+                        "36bc43d4-8247-40a5-8e8e-952ee90eaa0c": {
+                            "end": 504.289551,
+                            "id": "C1",
+                            "name": "Epiphany",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 472.0889
+                        },
+                        "38e7d777-4b2e-4321-8de7-96305bc8045a": {
+                            "end": 20.83763,
+                            "id": "C2",
+                            "name": "Deevice Wakes Up",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 16.003746
+                        },
+                        "3975b190-0ac0-42d3-884b-3a5586c7b15c": {
+                            "end": 339.59845,
+                            "id": "C7",
+                            "name": "Trust Earned",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 333.2208
+                        },
+                        "3a08706f-3c55-47c2-b1da-8edc3e4fdf46": {
+                            "end": 422.877838,
+                            "id": "C2",
+                            "name": "Beast Storms In",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 394.199127
+                        },
+                        "3bd04b75-b1ec-4b60-9855-6a4debb2e222": {
+                            "end": 472.0779,
+                            "id": "C4",
+                            "name": "Whip It",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 449.86676
+                        },
+                        "3c4f3a5e-99be-4f6a-9ee6-70a4992b2850": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 152.961761
+                        },
+                        "4d36a2dd-6bd7-49ab-82fb-efdb7cec9cb6": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 200.374725
+                        },
+                        "62b708dd-4628-401b-bacb-f1956cd727eb": {
+                            "end": 591.1573,
+                            "id": "C5",
+                            "name": "Mayday",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 542.8122
+                        },
+                        "6d48dcaa-1318-4e8b-9c6e-a58da6822422": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 244.2861
+                        },
+                        "84a3f9b2-925c-415a-862a-3b99139c34ed": {
+                            "end": 449.86676,
+                            "id": "C3",
+                            "name": "Deevice Pummel Loop",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 422.877838
+                        },
+                        "8c2b7064-3334-494e-b5a6-fbb3e299f8f5": {
+                            "end": 605.735352,
+                            "id": "C4",
+                            "name": "Pork Bun Offers You a Smore",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 591.1573
+                        },
+                        "93906255-f813-4642-becf-44f5c96878c1": {
+                            "end": 542.8122,
+                            "id": "C3",
+                            "name": "Eureka",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 532.4565
+                        },
+                        "945133c2-5283-42d6-9f3c-543d3cdb9810": {
+                            "end": 228.41954,
+                            "id": "C4",
+                            "name": "Startle",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 208.308762
+                        },
+                        "9671cb2d-5bd6-40f7-a419-3607aebba600": {
+                            "end": 16.003746,
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 11.2618723
+                        },
+                        "98252434-fdc2-4580-adfd-b1889b114e7d": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 177.585449
+                        },
+                        "9bb3c062-6425-4642-9a06-cc99799245e6": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 117.349808
+                        },
+                        "9c173c69-25d9-4c10-a541-1ad1b96daa5f": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 197.930008
+                        },
+                        "a8279351-767b-4fda-beb4-9c53d6e25d84": {
+                            "end": 162.383835,
+                            "id": "C11",
+                            "name": "You Feed The Fire",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 157.406036
+                        },
+                        "b0d00a37-01d3-4a2b-ad3d-9d78aabcb6bf": {
+                            "end": 244.275,
+                            "id": "C5",
+                            "name": "Deevice Shuts Down",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 229.886414
+                        },
+                        "b9329a5b-f653-4469-b4eb-7e16786891c3": {
+                            "end": 152.939377,
+                            "id": "C14",
+                            "name": "Feed Me",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 120.560966
+                        },
+                        "bb78ed06-ebf3-402c-a481-4b09fbcc5abb": {
+                            "end": 65.97166,
+                            "id": "C1",
+                            "name": "Tell Me Your Name",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 20.8488121
+                        },
+                        "c923f608-f41c-4a85-a0d5-9b282a98e8cc": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 186.4411
+                        },
+                        "cba4ab87-5f15-41fa-bd4e-242521e22ba8": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 20.8488121
+                        },
+                        "ceec8570-6b98-4710-937d-073978e7fcb7": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 171.9631
+                        },
+                        "d94124ff-e341-49a3-9ac7-94109a45c35d": {
+                            "end": 168.607132,
+                            "id": "C1",
+                            "name": "Eyes Appear",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 162.394913
+                        },
+                        "da6786cb-d40c-43a9-9a3d-386c3d63f1d3": {
+                            "end": 117.32753,
+                            "id": "C10",
+                            "name": "Beacon Explained",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 67.93851
+                        }
+                    },
+                    "errors": {
+                        "-LLIOD8DJl22mnWhXiG7": {
+                            "name": "Material doesn't have a texture property '_MainTex'",
+                            "time": 11.2618723
+                        },
+                        "-LLIOiEHU44uPapBWRxt": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 137.950211
+                        },
+                        "-LLIOlJYdNKe00XkEVmI": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 150.539017
+                        },
+                        "-LLIOu4vQKLerH-p0FpH": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 186.40773
+                        },
+                        "-LLIOxUxEcWsXusgbVbT": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 200.341232
+                        },
+                        "-LLIP2l44VJseMu55ihN": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 226.019348
+                        },
+                        "-LLIPVH6Xcxm4jHXeD66": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 342.79834
+                        }
+                    },
+                    "events": {
+                        "-LLIOEhAiqGLSxWKI59E": {
+                            "name": "PowerSwitchBroken",
+                            "time": 15.9986
+                        },
+                        "-LLIOHwUBJPrJOcfbLie": {
+                            "name": "MicUsed",
+                            "time": 29.2711067
+                        },
+                        "-LLIOLI4B0zkPJJUKJqc": {
+                            "name": "FireFed",
+                            "time": 43.0025
+                        },
+                        "-LLIOM3TKa6f7ROCSCHw": {
+                            "name": "FireFed",
+                            "time": 46.1755
+                        },
+                        "-LLIOM771Y2hW6Dj7e0I": {
+                            "name": "LogRemoved",
+                            "time": 46.3925972
+                        },
+                        "-LLIOMzBui8MRz0HM2e1": {
+                            "name": "FireFed",
+                            "time": 49.9162979
+                        },
+                        "-LLIORNb9v7MbHst2uWs": {
+                            "name": "BeaconButtonPushed",
+                            "time": 67.93851
+                        },
+                        "-LLIOV2OhLhcaJlHVcjL": {
+                            "name": "StationSelected",
+                            "time": 82.93835
+                        },
+                        "-LLIOdDmGlBf4UeYaO5f": {
+                            "name": "FoodButtonPushed",
+                            "time": 120.560966
+                        },
+                        "-LLIOdEPRwvHhMI0DxSp": {
+                            "name": "FoodButtonPushed",
+                            "time": 120.560966
+                        },
+                        "-LLIOhBvAzlky2UEAzy4": {
+                            "name": "MicUsed",
+                            "time": 133.693939
+                        },
+                        "-LLIOmz_0YRmr3QFrhd1": {
+                            "name": "FireFed",
+                            "time": 157.397491
+                        },
+                        "-LLIOnUumgE3mmcIHxnq": {
+                            "name": "LogRemoved",
+                            "time": 159.4516
+                        },
+                        "-LLIOnzVwgc1cg_guOOc": {
+                            "name": "FireFed",
+                            "time": 161.505692
+                        },
+                        "-LLIOoFUMcMYEYCSNuho": {
+                            "name": "EnteringPhase1",
+                            "time": 162.4949
+                        },
+                        "-LLIOqZHQXf1U2oaeTfy": {
+                            "name": "CalfHides",
+                            "time": 171.9519
+                        },
+                        "-LLIOtc_v_HSu-1sUHGO": {
+                            "name": "CalfHides",
+                            "time": 184.496445
+                        },
+                        "-LLIOwuMThbfZcQL27-e": {
+                            "name": "CalfHides",
+                            "time": 197.919052
+                        },
+                        "-LLIOzRDgXWzbN9q5KSG": {
+                            "name": "CalfNearby",
+                            "time": 208.296921
+                        },
+                        "-LLIP3hPim2DFJyS59qD": {
+                            "name": "LeavingPhase1",
+                            "time": 229.875076
+                        },
+                        "-LLIP3hhQ6Fr-wSYpL4F": {
+                            "name": "EnteringPhase2",
+                            "time": 229.875076
+                        },
+                        "-LLIP3i8kHaCItFb-kpw": {
+                            "name": "CalfEnters",
+                            "time": 229.9194
+                        },
+                        "-LLIP4OEkLh1BrJvEo0W": {
+                            "name": "LogRemoved",
+                            "time": 232.681091
+                        },
+                        "-LLIP62wCedpgST9YAUQ": {
+                            "name": "ThrowBurningObject",
+                            "time": 239.519455
+                        },
+                        "-LLIP86qcgFw1FiESTdy": {
+                            "name": "FireFed",
+                            "time": 247.9616
+                        },
+                        "-LLIPBiLiTtE9VFv1YRw": {
+                            "name": "LogRemoved",
+                            "time": 262.7077
+                        },
+                        "-LLIPBwjmrmxMUk3OqZ2": {
+                            "name": "ThrowBurningObject",
+                            "time": 263.63092
+                        },
+                        "-LLIPDKziFkRBzsdG-5j": {
+                            "name": "FireFed",
+                            "time": 269.354279
+                        },
+                        "-LLIPKNoWhPfOjJcE7gr": {
+                            "name": "LeavingPhase2",
+                            "time": 298.209137
+                        },
+                        "-LLIPKOKJLMEpfbujhkO": {
+                            "name": "EnteringPhase3",
+                            "time": 298.209137
+                        },
+                        "-LLIPLFRTOgw7hcN8gPf": {
+                            "name": "FoodButtonPushed",
+                            "time": 301.731781
+                        },
+                        "-LLIPLXRf5GtMr3JBUIW": {
+                            "name": "FoodButtonPushed",
+                            "time": 302.920258
+                        },
+                        "-LLIPL_pj2DgvBnDvyTK": {
+                            "name": "FoodButtonPushed",
+                            "time": 303.098022
+                        },
+                        "-LLIPL_v7ETi0vJZMJDE": {
+                            "name": "FoodButtonPushed",
+                            "time": 303.309143
+                        },
+                        "-LLIPLfULMJ-TZyhp2Td": {
+                            "name": "FoodButtonPushed",
+                            "time": 303.487
+                        },
+                        "-LLIPLhoV6VuXV_bRliI": {
+                            "name": "FoodButtonPushed",
+                            "time": 303.820251
+                        },
+                        "-LLIPLihH6RQAb5zvitO": {
+                            "name": "FoodButtonPushed",
+                            "time": 303.664673
+                        },
+                        "-LLIPM2e8LZBi9Qj1mjV": {
+                            "name": "FoodButtonPushed",
+                            "time": 305.0316
+                        },
+                        "-LLIPM5Nxup9MrP4ptY1": {
+                            "name": "FoodButtonPushed",
+                            "time": 305.2203
+                        },
+                        "-LLIPM5lS_sy_sow2lAZ": {
+                            "name": "FoodButtonPushed",
+                            "time": 305.409149
+                        },
+                        "-LLIPMBa29uJlsaUdqsR": {
+                            "name": "FoodButtonPushed",
+                            "time": 305.60907
+                        },
+                        "-LLIPME7lZfo1ESUkUpn": {
+                            "name": "FoodButtonPushed",
+                            "time": 305.942566
+                        },
+                        "-LLIPMEnNProSVh8PMLa": {
+                            "name": "FoodButtonPushed",
+                            "time": 305.786774
+                        },
+                        "-LLIPOVJMUzbqG5gXeOT": {
+                            "name": "FoodButtonPushed",
+                            "time": 315.075958
+                        },
+                        "-LLIPPj4etO0_a47Ot4h": {
+                            "name": "AboutToAccost",
+                            "time": 320.0983
+                        },
+                        "-LLIPSvuF7Q08ayZ7Nwf": {
+                            "name": "EnteringPhase4",
+                            "time": 333.209625
+                        },
+                        "-LLIPSvuF7Q08ayZ7Nwg": {
+                            "name": "LeavingPhase3",
+                            "time": 333.209625
+                        },
+                        "-LLIPUdxhEeBE8hYDX78": {
+                            "name": "RolledOver",
+                            "time": 340.254059
+                        },
+                        "-LLIPZ3Mrhvhop0S1CWn": {
+                            "name": "LogRemoved",
+                            "time": 358.3152
+                        },
+                        "-LLIPZByMNE_PtBJf_5B": {
+                            "name": "ThrowBurningObject",
+                            "time": 358.876556
+                        },
+                        "-LLIPZEN1isHaQYFVfrd": {
+                            "name": "LogRemoved",
+                            "time": 359.2003
+                        },
+                        "-LLIPZFFOZ6zxA7yD6uo": {
+                            "name": "FireFed",
+                            "time": 359.0834
+                        },
+                        "-LLIPZLONXJcuyRqFQrW": {
+                            "name": "FireFed",
+                            "time": 359.4675
+                        },
+                        "-LLIPZVr5xYnikEgqZ5j": {
+                            "name": "LogRemoved",
+                            "time": 360.1355
+                        },
+                        "-LLIPZsKS3pJJX8PgShR": {
+                            "name": "ThrowBurningObject",
+                            "time": 361.632
+                        },
+                        "-LLIPafh730yCUgnbas3": {
+                            "name": "LogRemoved",
+                            "time": 369.053284
+                        },
+                        "-LLIPbRC8wfQOPgA_crz": {
+                            "name": "FireFed",
+                            "time": 372.1428
+                        },
+                        "-LLIPd8knpVUrnf4qOnG": {
+                            "name": "LeavingPhase4",
+                            "time": 379.1658
+                        },
+                        "-LLIPoWJkaSp_nIX60YQ": {
+                            "name": "LogRemoved",
+                            "time": 425.699677
+                        },
+                        "-LLIPpoHomczH_VEBSn2": {
+                            "name": "ThrowBurningObject",
+                            "time": 431.021851
+                        },
+                        "-LLIPr2SH9JU80fQNSte": {
+                            "name": "FireFed",
+                            "time": 436.0871
+                        },
+                        "-LLIQ0LowtmzWbxoDiK0": {
+                            "name": "FireFed",
+                            "time": 478.288
+                        },
+                        "-LLIQAifVv07l-gQBbhK": {
+                            "name": "AntennaGrabbed",
+                            "time": 520.7779
+                        },
+                        "-LLIQBDSBLQC8EDxHxK8": {
+                            "name": "AntennaDropped",
+                            "time": 522.811646
+                        },
+                        "-LLIQBU6QV_qdklOMx2H": {
+                            "name": "AntennaGrabbed",
+                            "time": 523.90094
+                        },
+                        "-LLIQErkftIPGw_vJprB": {
+                            "name": "AntennaDropped",
+                            "time": 537.745667
+                        },
+                        "-LLIQJsHmIMwNpyWcXYV": {
+                            "name": "FireFed",
+                            "time": 558.247559
+                        },
+                        "-LLIQK4PpflNy_0h-JL9": {
+                            "name": "LogRemoved",
+                            "time": 559.0993
+                        },
+                        "-LLIQKUTZbn7GiT-KMSW": {
+                            "name": "FireFed",
+                            "time": 560.752563
+                        },
+                        "-LLIQKl_m2G-bpd_x_MD": {
+                            "name": "LogRemoved",
+                            "time": 561.9216
+                        },
+                        "-LLIQL0vySrUjAcvYqU4": {
+                            "name": "FireFed",
+                            "time": 562.957
+                        },
+                        "-LLIQLJEU6aAvHLT92jB": {
+                            "name": "LogRemoved",
+                            "time": 564.1427
+                        },
+                        "-LLIQLbiHHdz99v9AaIm": {
+                            "name": "FireFed",
+                            "time": 565.361755
+                        },
+                        "-LLIQWgSPw_Lv62e20Mt": {
+                            "name": "MarshmallowBurned",
+                            "time": 610.7462
+                        }
+                    },
+                    "sequences": {
+                        "4b9e2b71-872f-4f71-9dd5-57e4ccfed026": {
+                            "end": 20.8488121,
+                            "index": 0,
+                            "start": 11.26187
+                        },
+                        "96c51eaa-6746-4728-b93b-c9ee5d7b1a8f": {
+                            "index": 4,
+                            "start": 472.0889
+                        },
+                        "9e8713ee-a490-40e9-b090-81add7cf9bfd": {
+                            "end": 162.394913,
+                            "index": 1,
+                            "start": 20.84881
+                        },
+                        "af642f98-f900-40f9-a6e9-959a07482950": {
+                            "end": 472.0889,
+                            "index": 3,
+                            "start": 379.1879
+                        },
+                        "e17b54e2-188a-47f6-9f20-b66229eedd80": {
+                            "end": 379.1879,
+                            "index": 2,
+                            "start": 162.3949
+                        }
+                    },
+                    "timelines": {
+                        "07c6c3d2-2541-484e-9851-cc1b7d153201": {
+                            "end": 157.417068,
+                            "name": "b1_NeutralIdle",
+                            "start": 152.961761
+                        },
+                        "0d8dc07a-2dd1-482a-b2ef-e438fbef9d8a": {
+                            "end": 137.950211,
+                            "name": "b3.2_FeedMeSteak",
+                            "start": 133.693939
+                        },
+                        "154792a1-92b2-4e44-bdac-b32ef88c5f4e": {
+                            "end": 15.059206,
+                            "name": "b1_Setup",
+                            "start": 11.2618723
+                        },
+                        "1f7ba5f7-5c90-4e26-b9d4-8379183362af": {
+                            "end": 186.40773,
+                            "name": "b1.1_RightOutThere",
+                            "start": 184.50769
+                        },
+                        "2c34a071-a36e-46c8-a445-0a2edb7951ac": {
+                            "end": 605.72406,
+                            "name": "b1_Offer",
+                            "start": 591.1573
+                        },
+                        "36dc5cdd-8ea6-42b2-ae6a-988eff0ebfba": {
+                            "end": 591.146057,
+                            "name": "b1_Mayday",
+                            "start": 542.8122
+                        },
+                        "3e77de3c-c8fb-4071-bcda-ff70ed3a1d2c": {
+                            "end": 618.924133,
+                            "name": "b2_YouBurnedMarshmallow",
+                            "start": 610.7573
+                        },
+                        "40c473ae-c0c9-4602-ad3c-4946f5ad49c1": {
+                            "end": 342.79834,
+                            "name": "b1_PostRollover",
+                            "start": 340.2651
+                        },
+                        "416acba0-c7d6-4004-a0a7-47f47697e03f": {
+                            "name": "b1_LightsOut",
+                            "start": 618.9464
+                        },
+                        "430c1731-e745-4069-bb0f-e460b86c354b": {
+                            "end": 162.372787,
+                            "name": "b1_KeepThatBurning",
+                            "start": 157.406036
+                        },
+                        "43f00d4c-6f48-481b-9494-99eab4bef642": {
+                            "end": 177.563309,
+                            "name": "b2_TransitionToPreStartle",
+                            "start": 175.529709
+                        },
+                        "448804af-2bc9-478b-83d9-aee0628e47c8": {
+                            "end": 200.341232,
+                            "name": "b1.4_SeemsHungry",
+                            "start": 197.930008
+                        },
+                        "4db46f0f-8745-4b6e-8816-687985f07446": {
+                            "end": 111.649757,
+                            "name": "b3_EngineeringBots",
+                            "start": 95.29437
+                        },
+                        "4feff1c7-1e16-49b3-8bba-064d15fc94c5": {
+                            "end": 542.8009,
+                            "name": "b1_YouFoundTheAntenna",
+                            "start": 532.4565
+                        },
+                        "662b6ba5-4410-4edb-a56c-1f2fbe7b90bc": {
+                            "end": 472.066772,
+                            "name": "c4_b1_Main",
+                            "start": 449.86676
+                        },
+                        "6a2fced4-8ada-40a5-aa2b-33df61a6d806": {
+                            "end": 610.768433,
+                            "name": "b0_RoastingTimeIdle",
+                            "start": 605.735352
+                        },
+                        "6e598df8-9a02-47aa-8eca-d2892362be01": {
+                            "end": 20.8265362,
+                            "name": "b2_DeeviceWakesUp",
+                            "start": 17.5823555
+                        },
+                        "75a47a3c-2980-45fe-80bc-2f6919ce511f": {
+                            "end": 20.8599262,
+                            "name": "b1_NeutralIdle",
+                            "start": 20.8488121
+                        },
+                        "784b7be6-c772-44ef-b18a-a93749ff1700": {
+                            "end": 86.8274841,
+                            "name": "b1_TouchedBeaconButton",
+                            "start": 67.93851
+                        },
+                        "79252f85-13ce-4df6-8cad-4180d46d4e3b": {
+                            "end": 208.319168,
+                            "name": "b1_WaitingForStartle",
+                            "start": 200.374725
+                        },
+                        "7ca66393-1ca5-4c25-b119-3058de24a6a5": {
+                            "end": 65.9606,
+                            "name": "b3_HelloColonel",
+                            "start": 29.2711067
+                        },
+                        "8646c8da-eb23-4ada-bf5e-9ec056eb3353": {
+                            "end": 126.572319,
+                            "name": "b1.1_AhYoureHungry",
+                            "start": 120.560966
+                        },
+                        "890b76e5-d977-4761-b821-217cd597dba0": {
+                            "end": 168.595825,
+                            "name": "b1_EyesAppear",
+                            "start": 162.394913
+                        },
+                        "8d3f1668-a9b8-4143-bc32-a1e88ec9b311": {
+                            "end": 120.572067,
+                            "name": "b1_NeutralIdle",
+                            "start": 117.349808
+                        },
+                        "91acbf17-f0b3-4b16-b9ba-0c099b299540": {
+                            "end": 504.278442,
+                            "name": "b1_Epiphany",
+                            "start": 472.0889
+                        },
+                        "92f69238-6970-4401-8912-ef2998587162": {
+                            "end": 16.003746,
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 15.059206
+                        },
+                        "9412e6a0-3918-4249-a9a4-e1bacaed49e5": {
+                            "end": 117.316422,
+                            "name": "b4_ThingsCouldGetUgly",
+                            "start": 111.66124
+                        },
+                        "96f4bb61-56b5-4783-aa16-62c49851b1a3": {
+                            "end": 394.188477,
+                            "name": "c1_b1_Main",
+                            "start": 379.1879
+                        },
+                        "b25a7888-b79c-44e8-ad32-4b61d60612fd": {
+                            "end": 333.065063,
+                            "name": "b1_UnderAttack",
+                            "start": 320.1094
+                        },
+                        "ba5706bc-fb31-4b3e-84e0-38288029e676": {
+                            "end": 197.9412,
+                            "name": "b1_WaitingForStartle",
+                            "start": 186.4411
+                        },
+                        "c0aabeaf-232a-4918-9b14-67de8978201a": {
+                            "end": 431.021851,
+                            "name": "b1.1_ShakeIdle",
+                            "start": 422.877838
+                        },
+                        "c2d53b4e-0514-4abb-ad63-6af76ff9f076": {
+                            "end": 449.855438,
+                            "name": "b2_YouAreFired",
+                            "start": 431.021851
+                        },
+                        "c5463cea-a4fe-4a7f-8e94-09d18953d3fa": {
+                            "end": 150.539017,
+                            "name": "b4_NourishmentCylinders",
+                            "start": 137.961349
+                        },
+                        "ca79f717-ffb0-4c2b-9b7f-d0c3780d2582": {
+                            "end": 320.120361,
+                            "name": "b2_PlayDead",
+                            "start": 244.2861
+                        },
+                        "cf095cec-2ea1-45f7-9525-28fe2242b318": {
+                            "end": 175.518616,
+                            "name": "b1.3_DoesNotLookGood",
+                            "start": 171.9631
+                        },
+                        "cfc02f56-7f47-4f5c-b2f1-2cd6eaabbd0e": {
+                            "end": 422.866241,
+                            "name": "c2_b1_Main",
+                            "start": 394.199127
+                        },
+                        "d7c9ac93-3a2a-4d7a-801a-5704d4a313fa": {
+                            "end": 226.019348,
+                            "name": "b2_Boo",
+                            "start": 208.308762
+                        },
+                        "d8bafc3d-effb-4680-a75c-f3290ce1f957": {
+                            "end": 532.4453,
+                            "name": "b1_PorkBunMakesSmores",
+                            "start": 504.289551
+                        },
+                        "db5d52f3-006b-4d20-9f39-225f6d13b25e": {
+                            "end": 67.94946,
+                            "name": "b1_NeutralIdle",
+                            "start": 65.99389
+                        },
+                        "e158a910-6b21-4bbc-846e-d11b5f6f9bc2": {
+                            "end": 244.264053,
+                            "name": "b1_DeeviceShutsDown",
+                            "start": 229.886414
+                        },
+                        "edddac08-7956-4dd4-9530-23141a3309b3": {
+                            "end": 184.518784,
+                            "name": "b1_WaitingForStartle",
+                            "start": 177.585449
+                        },
+                        "f3efffb3-73cf-4295-abba-a39e231ec9d4": {
+                            "end": 17.57081,
+                            "name": "b1_PowerPop",
+                            "start": 16.003746
+                        },
+                        "f9a5f246-b866-44d0-a5d8-ea9baa7ef7e3": {
+                            "end": 132.838135,
+                            "name": "b2_WellTrained",
+                            "start": 126.583534
+                        },
+                        "fd1e7ef1-36a6-4fe3-94e7-9207b4f15a0f": {
+                            "end": 28.2710247,
+                            "name": "b1_StateYourName",
+                            "start": 20.8488121
+                        },
+                        "fd775558-1614-42c8-b3a1-7b3a04852b97": {
+                            "end": 95.28318,
+                            "name": "b2_StrangeCall",
+                            "start": 86.83865
+                        },
+                        "fe7513a2-fae2-437f-8901-fabe5509d670": {
+                            "end": 339.5873,
+                            "name": "b1_TrustEarned",
+                            "start": 333.2208
+                        }
+                    }
+                }
+            },
+            "9-1-2018": {
+                "cde69d81-4a14-4811-8c3c-ed85115caadf": {
+                    "chunks": {
+                        "09b76a9b-9768-4fea-8026-56606731bd45": {
+                            "end": 219.154358,
+                            "id": "C4",
+                            "name": "Deevice Turns On Radio",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 215.465591
+                        },
+                        "09c172ea-714c-464a-8eb4-b6c48ce216f0": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 374.881744
+                        },
+                        "103b7f9c-2072-4b45-b1b1-5bf7beea26e6": {
+                            "end": 686.534363,
+                            "id": "C3",
+                            "name": "Deevice Pummel Loop",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 651.432434
+                        },
+                        "10d587a6-1125-4fe4-966b-14e5272f1e21": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 482.991028
+                        },
+                        "16c2a36e-989a-41c3-8be3-fb2e60bb85fe": {
+                            "end": 570.2337,
+                            "id": "C7",
+                            "name": "Trust Earned",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 563.855835
+                        },
+                        "2ae927fb-e40d-4292-b110-9089ee1078b7": {
+                            "end": 708.7561,
+                            "id": "C4",
+                            "name": "Whip It",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 686.534363
+                        },
+                        "2be91ab4-f9dc-4f25-a73a-07077f267f6a": {
+                            "end": 651.432434,
+                            "id": "C2",
+                            "name": "Beast Storms In",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 622.7441
+                        },
+                        "37b73837-bca8-4947-bd89-e0901e0f13ce": {
+                            "end": 345.13736,
+                            "id": "C1",
+                            "name": "Eyes Appear",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 338.930237
+                        },
+                        "3b11070c-6ffb-4f4a-84c4-fb7a76858b2d": {
+                            "end": 779.4883,
+                            "id": "C3",
+                            "name": "Eureka",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 769.1329
+                        },
+                        "3f73f264-e2c3-4e55-b8be-5b068d2b41b2": {
+                            "id": "",
+                            "name": "Dispense Marshmallow",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 586.7224
+                        },
+                        "45711614-e976-4de6-bbf3-c7dc2a554771": {
+                            "end": 573.4449,
+                            "id": "C7.5",
+                            "name": "Post Rollover",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 570.9003
+                        },
+                        "4bb470a9-453d-4c24-a866-e7d8bd1d3b4a": {
+                            "end": 563.6892,
+                            "id": "C6",
+                            "name": "Under Attack",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 550.723
+                        },
+                        "540ef13a-56bf-4f92-9d24-24c058e5e0f3": {
+                            "end": 866.3313,
+                            "id": "C6",
+                            "name": "Roasting Time",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 842.431641
+                        },
+                        "551200f5-bc07-490d-b49e-d863eaf6ec5e": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 219.176712
+                        },
+                        "57686a33-b81b-486b-8b38-c8c28cd411d3": {
+                            "end": 769.1329,
+                            "id": "C2",
+                            "name": "Pork Bun Makes Smores",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 740.9648
+                        },
+                        "58e6dbab-d7fc-4caf-9235-7408ffe1e11c": {
+                            "end": 466.046783,
+                            "id": "C4",
+                            "name": "Startle",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 447.013733
+                        },
+                        "5ea1e3b1-b560-49a6-b0e6-32fbefb78a15": {
+                            "end": 166.855179,
+                            "id": "C2",
+                            "name": "Deevice Wakes Up",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 162.0221
+                        },
+                        "63affeff-d8a8-498e-90a2-dc1573f3f3d3": {
+                            "end": 827.8431,
+                            "id": "C5",
+                            "name": "Mayday",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 779.4883
+                        },
+                        "67ea1ef6-4e87-4a3b-8899-7a47d4ee1460": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 205.477
+                        },
+                        "69e0333d-1993-4722-be93-915927c654c2": {
+                            "end": 162.0221,
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 130.948929
+                        },
+                        "8d6371c8-a110-4b09-9c8e-05a7e46c10d8": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 392.858917
+                        },
+                        "8edf1b55-430a-43b9-8961-ca1aecccd8a3": {
+                            "end": 205.45462,
+                            "id": "C1",
+                            "name": "Tell Me Your Name",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 166.8665
+                        },
+                        "93b365a7-2c70-488d-8d36-ca14d5a6c36f": {
+                            "end": 266.598053,
+                            "id": "C14",
+                            "name": "Feed Me",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 224.965378
+                        },
+                        "9833d611-5b7b-44e8-b640-6e0c72080dee": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 266.620453
+                        },
+                        "a2406ad1-35dd-4e64-b068-60fc446558da": {
+                            "end": 338.918884,
+                            "id": "C10",
+                            "name": "Beacon Explained",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 294.742
+                        },
+                        "af54836d-a3b9-4645-b8db-c68c80c945c6": {
+                            "end": 740.9648,
+                            "id": "C1",
+                            "name": "Epiphany",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 708.7673
+                        },
+                        "af94dd65-f906-4b8f-b5e3-40ffe8ab879d": {
+                            "end": 482.9798,
+                            "id": "C5",
+                            "name": "Deevice Shuts Down",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 468.5914
+                        },
+                        "ce794929-e55d-4a57-8796-cb11d018cce4": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 394.792358
+                        },
+                        "dcc6349f-d91e-4797-bbbd-ea7d593bec82": {
+                            "id": "C2",
+                            "name": "It Is Out There",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 370.4039
+                        },
+                        "e643c7f3-0050-496e-8fd3-53b91add6f78": {
+                            "end": 284.7198,
+                            "id": "C12",
+                            "name": "Deevice Feeds The Fire",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 277.6312
+                        },
+                        "e8008fa1-92b2-45c4-93b6-5cbb05482707": {
+                            "id": "C7",
+                            "name": "Lights Out",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 866.3313
+                        },
+                        "f2c605ea-cc12-484f-bd85-7c52bf5d7455": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 166.8665
+                        },
+                        "f3d60e13-ac15-4e09-9034-5fbe92ca0a67": {
+                            "end": 842.431641,
+                            "id": "C4",
+                            "name": "Pork Bun Offers You a Smore",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 827.8431
+                        },
+                        "fb170db4-1777-45f5-87bc-9ce1b047a7ac": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 284.742126
+                        },
+                        "ffd9fcd0-1765-4443-bf1d-dd2208cb7c70": {
+                            "end": 622.7441,
+                            "id": "C1",
+                            "name": "Beast Approach",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 607.722168
+                        }
+                    },
+                    "errors": {
+                        "-LLL_C22ALMUqMuBXEFP": {
+                            "name": "Material doesn't have a texture property '_MainTex'",
+                            "time": 130.948929
+                        },
+                        "-LLL__hcCrqotIBAB-Jf": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 230.976318
+                        },
+                        "-LLL_aznq6Lvn6ZlREZg": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 237.243
+                        },
+                        "-LLLaCTV4uogxAT6GzaZ": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 394.75885
+                        },
+                        "-LLLasJFQcJd-I3Eg5JJ": {
+                            "name": "C:\\buildslave\\unity\\build\\Modules/Audio/Public/sound/SoundChannel.cpp(356) : Error executing result (An invalid seek position was passed to this function. )",
+                            "time": 570.2226
+                        }
+                    },
+                    "events": {
+                        "-LLL_JcwzDa7r_AFZwjE": {
+                            "name": "PowerSwitchBroken",
+                            "time": 162.0221
+                        },
+                        "-LLL_NsZHHelfNDGvALX": {
+                            "name": "MicUsed",
+                            "time": 179.444016
+                        },
+                        "-LLL_Z-BGuAk6sO-T195": {
+                            "name": "FoodButtonPushed",
+                            "time": 224.965378
+                        },
+                        "-LLL_Z-G9Ojs-HA7H7Q9": {
+                            "name": "FoodButtonPushed",
+                            "time": 224.965378
+                        },
+                        "-LLL_zrzmc7-icbVoFya": {
+                            "name": "EnteringPhase1",
+                            "time": 339.0302
+                        },
+                        "-LLLa1NgR-JPOWOywJuA": {
+                            "name": "BeaconButtonPushed",
+                            "time": 349.326324
+                        },
+                        "-LLLa2aMkEGlOucPi9Vb": {
+                            "name": "StationSelected",
+                            "time": 354.304077
+                        },
+                        "-LLLa6X11ZrpeyP71X06": {
+                            "name": "CalfHides",
+                            "time": 370.392761
+                        },
+                        "-LLLaC-hz7jge_iTfGKJ": {
+                            "name": "CalfHides",
+                            "time": 392.8478
+                        },
+                        "-LLLaPEfWf7mHEDLPH5a": {
+                            "name": "CalfNearby",
+                            "time": 447.002625
+                        },
+                        "-LLLaUV5C_A0R2NwkX-D": {
+                            "name": "LeavingPhase1",
+                            "time": 468.58017
+                        },
+                        "-LLLaUV_LmZQH4XOShuz": {
+                            "name": "EnteringPhase2",
+                            "time": 468.58017
+                        },
+                        "-LLLaUdmJt2ggGUhVN47": {
+                            "name": "CalfEnters",
+                            "time": 469.191132
+                        },
+                        "-LLLaXhdInba9yYL4WYW": {
+                            "name": "ThrowBurningObject",
+                            "time": 481.557617
+                        },
+                        "-LLLaZVQBk6R6fnPu-oU": {
+                            "name": "ThrowBurningObject",
+                            "time": 489.068542
+                        },
+                        "-LLLa_Yy8lShHK-QG2N9": {
+                            "name": "ThrowBurningObject",
+                            "time": 493.3907
+                        },
+                        "-LLLaa9jQD-QVANffkUz": {
+                            "name": "FoodButtonPushed",
+                            "time": 495.890656
+                        },
+                        "-LLLagBZz0ET-lEkWuR4": {
+                            "name": "EnteringPhase3",
+                            "time": 520.5681
+                        },
+                        "-LLLagBc20hzx7FSALMU": {
+                            "name": "LeavingPhase2",
+                            "time": 520.5681
+                        },
+                        "-LLLahwISmPCda0nEhTh": {
+                            "name": "ThrowBurningObject",
+                            "time": 526.9457
+                        },
+                        "-LLLanYU8Du-3RaRllcI": {
+                            "name": "AboutToAccost",
+                            "time": 550.712
+                        },
+                        "-LLLaqkkXdi812rofwm0": {
+                            "name": "EnteringPhase4",
+                            "time": 563.844666
+                        },
+                        "-LLLaqkz_mT167oN2gpK": {
+                            "name": "LeavingPhase3",
+                            "time": 563.844666
+                        },
+                        "-LLLasTjk4kWhh4XBJEr": {
+                            "name": "RolledOver",
+                            "time": 570.8892
+                        },
+                        "-LLLawL4Wg59L-W_6yl4": {
+                            "name": "FoodButtonPushed",
+                            "time": 586.7224
+                        },
+                        "-LLLb0SrSDFWU9NDVqya": {
+                            "name": "LeavingPhase4",
+                            "time": 607.699768
+                        },
+                        "-LLLb1UZYznwrvkwA386": {
+                            "name": "ThrowBurningObject",
+                            "time": 611.888245
+                        },
+                        "-LLLbKXJ_6_8UHuwaHrD": {
+                            "name": "LogRemoved",
+                            "time": 689.8102
+                        },
+                        "-LLLbKzYt0dUCxlDaQkB": {
+                            "name": "FireFed",
+                            "time": 691.6806
+                        },
+                        "-LLLbNr_hxe2t9pepK40": {
+                            "name": "BeaconButtonPushed",
+                            "time": 703.445068
+                        },
+                        "-LLLbOG8UFnjLiiCXPxP": {
+                            "name": "BeaconButtonPushed",
+                            "time": 705.1005
+                        },
+                        "-LLLbRilLULyHIj83Odz": {
+                            "name": "FireFed",
+                            "time": 719.269
+                        },
+                        "-LLLbRnXt1jw1vtVHTX5": {
+                            "name": "LogRemoved",
+                            "time": 719.5863
+                        },
+                        "-LLLbRpwRCybSKAsEBzY": {
+                            "name": "FireFed",
+                            "time": 719.7199
+                        },
+                        "-LLLb_tdC4nzS8wAdMEj": {
+                            "name": "AntennaGrabbed",
+                            "time": 756.766663
+                        },
+                        "-LLLbarxVpyL7LTXCj3Y": {
+                            "name": "AntennaDropped",
+                            "time": 760.8108
+                        },
+                        "-LLLbfEhoviNuMo6ossl": {
+                            "name": "AntennaGrabbed",
+                            "time": 778.7327
+                        },
+                        "-LLLbfU0UAgcySbnuVxF": {
+                            "name": "AntennaDropped",
+                            "time": 779.6994
+                        },
+                        "-LLLbycTfVFzws4lN23o": {
+                            "name": "MarshmallowBurned",
+                            "time": 858.120239
+                        }
+                    },
+                    "sequences": {
+                        "02a958a7-cd15-44cb-86a8-3f23e3db331b": {
+                            "end": 338.930237,
+                            "index": 1,
+                            "start": 166.8665
+                        },
+                        "3784ffab-5854-4f90-a74b-3188f753cad0": {
+                            "end": 607.722168,
+                            "index": 2,
+                            "start": 338.9302
+                        },
+                        "5a53e038-d372-47c3-a6e4-0ab381878179": {
+                            "index": 4,
+                            "start": 708.7673
+                        },
+                        "78e69590-38f1-4ed2-854a-cbd0b25c1772": {
+                            "end": 166.8665,
+                            "index": 0,
+                            "start": 130.9489
+                        },
+                        "e1be427b-5bb3-4101-aef9-ae342f46c48f": {
+                            "end": 708.7673,
+                            "index": 3,
+                            "start": 607.7222
+                        }
+                    },
+                    "timelines": {
+                        "02ec3c97-bca6-451c-8ffc-f41b461a8287": {
+                            "end": 394.75885,
+                            "name": "b1.1_RightOutThere",
+                            "start": 392.858917
+                        },
+                        "06e5d654-d151-4ec1-839e-54c33e4c49e4": {
+                            "end": 858.1426,
+                            "name": "b0_RoastingTimeIdle",
+                            "start": 842.431641
+                        },
+                        "0725bc3e-c60d-492b-8add-c6d8aa82e7c3": {
+                            "end": 651.421265,
+                            "name": "c2_b1_Main",
+                            "start": 622.7441
+                        },
+                        "10803d07-8bfd-41df-b184-243cfd9dd605": {
+                            "end": 482.968658,
+                            "name": "b1_DeeviceShutsDown",
+                            "start": 468.5914
+                        },
+                        "16e67099-f20c-4849-a581-71fe5f8e517b": {
+                            "end": 622.732849,
+                            "name": "c1_b1_Main",
+                            "start": 607.722168
+                        },
+                        "1fa8c3db-cc84-400e-92df-62033b18a718": {
+                            "end": 303.186127,
+                            "name": "b2_StrangeCall",
+                            "start": 294.742
+                        },
+                        "2973e3be-0f66-4d1a-b786-362770ff47ce": {
+                            "end": 166.877609,
+                            "name": "b1_NeutralIdle",
+                            "start": 166.8665
+                        },
+                        "2ada779f-dec1-4af7-bd67-58ed948aafaf": {
+                            "end": 205.443481,
+                            "name": "b3.1_HelloColonelSwitchIgnored",
+                            "start": 179.444016
+                        },
+                        "2f668ffc-7fb5-4e4d-bb47-2f0bba47d476": {
+                            "end": 686.534363,
+                            "name": "b1.1_ShakeIdle",
+                            "start": 651.432434
+                        },
+                        "39367d27-285a-4ae3-a0ee-0961d206c363": {
+                            "end": 447.025238,
+                            "name": "b1_WaitingForStartle",
+                            "start": 394.792358
+                        },
+                        "504a11a1-75db-42a5-8d3a-854663a35966": {
+                            "end": 842.4204,
+                            "name": "b1_Offer",
+                            "start": 827.8431
+                        },
+                        "57e8880a-1b02-4dd6-a489-507fed486333": {
+                            "end": 277.6424,
+                            "name": "b1_NeutralIdle",
+                            "start": 266.620453
+                        },
+                        "57eb841e-e718-4b9a-80b5-62b65024dc68": {
+                            "end": 374.8594,
+                            "name": "b2_TransitionToPreStartle",
+                            "start": 372.825623
+                        },
+                        "5d6fa6be-285a-4ccb-b726-1f33799294ed": {
+                            "end": 319.008545,
+                            "name": "b2.1_ExplainBeacon",
+                            "start": 303.1973
+                        },
+                        "5e43da54-c0d7-408c-9736-4ce549561a9f": {
+                            "end": 335.374542,
+                            "name": "b3_EngineeringBots",
+                            "start": 319.0194
+                        },
+                        "6afe2fc2-bbf7-4c0c-902f-b81cb06d2f58": {
+                            "end": 174.288437,
+                            "name": "b1_StateYourName",
+                            "start": 166.8665
+                        },
+                        "6c078efa-e953-463f-8a95-2f0f025efc2e": {
+                            "end": 237.243,
+                            "name": "b2_WellTrained",
+                            "start": 230.987442
+                        },
+                        "763668d6-6aec-4406-96b5-7852c8c868a8": {
+                            "end": 550.734253,
+                            "name": "b2_PlayDead",
+                            "start": 482.991028
+                        },
+                        "7f197c03-a62f-42da-a50c-560d78aba51e": {
+                            "end": 166.844055,
+                            "name": "b2_DeeviceWakesUp",
+                            "start": 163.609879
+                        },
+                        "81a887e8-6b66-4331-826f-3f1b4a4a8c61": {
+                            "end": 219.14325,
+                            "name": "b1.2_DeeviceTurnsOnRadioAltB",
+                            "start": 215.465591
+                        },
+                        "82d14f3b-5caf-4a62-b7e6-0993bf2ee056": {
+                            "end": 464.72467,
+                            "name": "b2_Boo",
+                            "start": 447.013733
+                        },
+                        "83ee48ba-ac9f-4f2a-b0ef-112c90fd8d57": {
+                            "name": "b1_LightsOut",
+                            "start": 866.3313
+                        },
+                        "88f591ca-3bfa-441e-82ab-355a880afa24": {
+                            "end": 224.976669,
+                            "name": "b1_NeutralIdle",
+                            "start": 219.176712
+                        },
+                        "899d08c7-98de-4fc0-b836-b3bbd3a32bd4": {
+                            "end": 392.87027,
+                            "name": "b1_WaitingForStartle",
+                            "start": 374.881744
+                        },
+                        "8c9ac269-e9a4-4bbe-8795-619704d9f7af": {
+                            "end": 740.9536,
+                            "name": "b1_Epiphany",
+                            "start": 708.7673
+                        },
+                        "90e5ca1f-21f5-4e4d-9bd4-e1fbf22c9797": {
+                            "end": 570.2226
+                        },
+                        "934e4f59-dd56-4a71-b208-9c8b79d0624e": {
+                            "end": 265.275879,
+                            "name": "b4_NourishmentCylinders",
+                            "start": 252.698624
+                        },
+                        "941a0a8f-ec15-4a65-85ee-a1b5f8f4e4d5": {
+                            "end": 215.476776,
+                            "name": "b1_NeutralIdle",
+                            "start": 205.477
+                        },
+                        "968519ae-fdbc-4a67-81ba-fcbe67336814": {
+                            "end": 372.814575,
+                            "name": "b1.4_SeemsHungry",
+                            "start": 370.4039
+                        },
+                        "9eceac01-4904-4d65-96eb-30e5a13d9aeb": {
+                            "end": 779.4772,
+                            "name": "b1_YouFoundTheAntenna",
+                            "start": 769.1329
+                        },
+                        "ae61d813-0bd0-41a3-8f57-0d9e6dc59cd1": {
+                            "end": 284.708679,
+                            "name": "b2_DeeviceAddsLog",
+                            "start": 277.6312
+                        },
+                        "b38a39af-5fd8-49c2-868f-5ae6350da5a7": {
+                            "end": 573.4338,
+                            "name": "b1_PostRollover",
+                            "start": 570.9003
+                        },
+                        "b41ab486-4cb4-4d3b-b820-4eb916735b2e": {
+                            "end": 162.010956,
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 149.500092
+                        },
+                        "ba0d4008-33e9-4802-b8dc-366f232fa2d1": {
+                            "end": 294.7531,
+                            "name": "b1_NeutralIdle",
+                            "start": 284.742126
+                        },
+                        "ba17769e-e31b-460e-8a51-c138b8467566": {
+                            "end": 866.309143,
+                            "name": "b2_YouBurnedMarshmallow",
+                            "start": 858.1315
+                        },
+                        "cf1b27c1-5459-4a1c-89f2-3aaae36cfe6e": {
+                            "end": 149.500092,
+                            "name": "b1_Setup",
+                            "start": 130.948929
+                        },
+                        "e8a05187-c5b6-43de-b59b-e85affd5448a": {
+                            "end": 251.375992,
+                            "name": "b3.4_FeedMeSilence",
+                            "start": 247.26503
+                        },
+                        "eb0b1942-10d6-463b-bbd5-31251761d356": {
+                            "end": 769.121765,
+                            "name": "b1_PorkBunMakesSmores",
+                            "start": 740.9648
+                        },
+                        "edabcf9e-3fbb-4526-a961-56e6665e944c": {
+                            "end": 163.598709,
+                            "name": "b1_PowerPop",
+                            "start": 162.0221
+                        },
+                        "ee709aca-4d46-4cf0-81d1-8506bdb1a8d8": {
+                            "end": 708.7451,
+                            "name": "c4_b1_Main",
+                            "start": 686.534363
+                        },
+                        "eef2048a-349c-4196-bdc3-5fa41c748e69": {
+                            "end": 338.907837,
+                            "name": "b4.1_ThingsCouldGetUglyAlt",
+                            "start": 335.385742
+                        },
+                        "eef87857-e283-4d35-b879-256969dad8e4": {
+                            "end": 827.8319,
+                            "name": "b1_Mayday",
+                            "start": 779.4883
+                        },
+                        "f0558a4d-b68b-4047-a296-5cb4d64f0734": {
+                            "end": 230.976318,
+                            "name": "b1.1_AhYoureHungry",
+                            "start": 224.965378
+                        },
+                        "f8f7e191-6102-4cd7-8b53-bc5ce2e52b28": {
+                            "end": 563.678162,
+                            "name": "b1_UnderAttack",
+                            "start": 550.723
+                        },
+                        "fc8b08b2-3597-4944-b341-8507782cd32d": {
+                            "end": 345.12616,
+                            "name": "b1_EyesAppear",
+                            "start": 338.930237
+                        }
+                    }
+                }
+            }
+        },
+        "build-b462d6bed61bd094d8046143001a3fe4": {
+            "09-01-2018": {
+                "8e95877a-900b-4f99-87ed-632c0c84c289": {
+                    "chunks": {
+                        "29b7da21-3169-4225-93c0-710b43d34073": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 43.94915
+                        },
+                        "3c20a156-d84c-41a2-8c7c-4ad88de440bb": {
+                            "id": "C1",
+                            "name": "Tell Me Your Name",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 43.94915
+                        },
+                        "7458b1aa-1aec-4618-8b53-248a2a8e2ec3": {
+                            "id": "C1",
+                            "name": "Epiphany",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 36.10949
+                        },
+                        "78ef68ee-ac3f-4ba1-b2c1-1ee8b899b57b": {
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 22.4139347
+                        },
+                        "d381fb40-5915-4184-a3d9-57e6ed2b8967": {
+                            "id": "C1",
+                            "name": "Tell Me Your Name",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 31.4327011
+                        },
+                        "e85b292b-0a16-4277-a4a4-f156d7a6343e": {
+                            "id": "C1",
+                            "name": "Eyes Appear",
+                            "optional": true,
+                            "repeatable": false,
+                            "start": 40.7914
+                        },
+                        "f2c73f62-6150-47fd-9b84-b6488d8f2afa": {
+                            "id": "C1",
+                            "name": "Power Switch Focus",
+                            "optional": false,
+                            "repeatable": false,
+                            "start": 45.5184364
+                        },
+                        "fe3791d4-36be-4163-87b2-4a7ab9e21b6f": {
+                            "id": "C0",
+                            "name": "Idle",
+                            "optional": true,
+                            "repeatable": true,
+                            "start": 31.4327011
+                        }
+                    },
+                    "errors": {
+                        "-LLM0p62lGn46OWZcQ1j": {
+                            "name": "Material doesn't have a texture property '_MainTex'",
+                            "time": 22.4139347
+                        }
+                    },
+                    "events": {
+                        "-LLM11AdsaQCm-rrbEbE": {
+                            "name": "EnteringPhase1",
+                            "time": 40.7914
+                        },
+                        "-LLM139YinvyIdVB5Fct": {
+                            "name": "CalfHides",
+                            "time": 42.16078
+                        }
+                    },
+                    "sequences": {
+                        "279b3ae9-02c9-4bc7-bfdd-8334fd39d470": {
+                            "end": 36.10949,
+                            "index": 1,
+                            "start": 31.4327
+                        },
+                        "44f1f8e7-8df6-4c0b-9a48-cff614f6d777": {
+                            "end": 40.7914,
+                            "index": 4,
+                            "start": 36.10949
+                        },
+                        "6542f49e-2ba8-4358-aaf7-1a4983fdce7d": {
+                            "end": 31.4327011,
+                            "index": 0,
+                            "start": 22.41393
+                        },
+                        "685364e0-0ad2-4f75-b1bb-812867c26345": {
+                            "end": 45.5184364,
+                            "index": 1,
+                            "start": 43.94915
+                        },
+                        "890397fc-f46d-4fc0-8db5-75547334dcf9": {
+                            "index": 0,
+                            "start": 45.51844
+                        },
+                        "bbcef03f-3b4f-46b9-9a7e-a76fdb295938": {
+                            "end": 43.94915,
+                            "index": 2,
+                            "start": 40.7914
+                        }
+                    },
+                    "timelines": {
+                        "07a5f907-4c8b-4ce1-864e-6ef4913220df": {
+                            "end": 43.94915,
+                            "name": "b1_NeutralIdle",
+                            "start": 43.94915
+                        },
+                        "0a28ef77-2f48-4c22-8643-35b74f36b982": {
+                            "end": 31.4327011,
+                            "name": "b1_NeutralIdle",
+                            "start": 31.4327011
+                        },
+                        "42ea2823-effd-417c-b070-4808383ae0b1": {
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 52.1353874
+                        },
+                        "47a14dee-81e2-4138-b7ae-4aac5e02c014": {
+                            "end": 45.5184364,
+                            "name": "b1_StateYourName",
+                            "start": 43.94915
+                        },
+                        "a450aa44-c3bf-4663-9b9d-fba963d40a49": {
+                            "end": 52.1353874,
+                            "name": "b1_Setup",
+                            "start": 45.5184364
+                        },
+                        "aa203365-2c48-475f-ad1c-6986d3bfbbdb": {
+                            "end": 43.94915,
+                            "name": "b1_EyesAppear",
+                            "start": 40.7914
+                        },
+                        "b43a1a01-5fb5-4070-8af4-56eb05fd4743": {
+                            "end": 36.10949,
+                            "name": "b1_StateYourName",
+                            "start": 31.4327011
+                        },
+                        "c2ed28bd-0174-4648-8ae3-7609b91a1f39": {
+                            "end": 24.01566,
+                            "name": "b1_Setup",
+                            "start": 22.4139347
+                        },
+                        "d3c95e41-1f36-417a-9bf5-089e24db551b": {
+                            "end": 40.7914,
+                            "name": "b1_Epiphany",
+                            "start": 36.10949
+                        },
+                        "da7b6188-cc0d-4379-86f5-067d6703e9f5": {
+                            "end": 31.4327011,
+                            "name": "b2_PowerSwitchFocus",
+                            "start": 24.01566
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "test": {
+        "name": "test"
+    }
+}
