@@ -1,24 +1,21 @@
 <template>
 <div id="app">
     <h1>Choose Build</h1>
-    <el-select v-model="buildVersion" placeholder="Select a build version">
-        <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value">
+    <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
+        <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
         </el-option>
     </el-select>
-    <!-- <el-select v-model="value11" multiple collapse-tags style="margin-left: 20px;" placeholder="Select">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+    <el-select v-model="selectedDateOptions" multiple collapse-tags style="margin-left: 20px;" placeholder="Select test date">
+        <el-option v-for="testDateOption in testDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
         </el-option>
-    </el-select> -->
-    <timeline></timeline>
-
+    </el-select>
+    <timeline :rawData="selectedDataSets"></timeline>
 </div>
 </template>
 
 <script>
 import Timeline from "./components/Timeline.vue";
-import {
-    db
-} from "./firebase";
+import { db } from "./firebase";
 
 export default {
     name: "app",
@@ -26,82 +23,68 @@ export default {
         Timeline
     },
 
+    props: ["playTrackingRef"],
+
     data() {
         return {
-            options2: [],
-            props: {
-                label: "label",
-                value: "key"
-            },
-
-            options: [{
-                value: 'Option1',
-                label: 'Option1'
-            }, {
-                value: 'Option2',
-                label: 'Option2'
-            }, {
-                value: 'Option3',
-                label: 'Option3'
-            }, {
-                value: 'Option4',
-                label: 'Option4'
-            }, {
-                value: 'Option5',
-                label: 'Option5'
-            }],
-
-            buildVersion: ''
+            // first selector
+            buildVersionOptions: [],
+            // second selector
+            testDateOptions: [],
+            selectedDateOptions: [],
         };
     },
 
-    created() {
-        var component = this
-        db.ref("play-tracking").once("value", function (snap) {
-            const trackingData = snap.val();
-            for (const buildData in trackingData) {
-                const option = {
-                    label: buildData,
-                    cities: []
-                }
-                component.options2.push(option)
-            }
-        });
+    computed: {
+        selectedDataSets: function () {
+            const selectedDataSets = {}
+            this.selectedDateOptions.forEach(dateOption => {
+                selectedDataSets[dateOption.label] = dateOption.value
+            })
+
+            return selectedDataSets
+        }
     },
 
-    methods: {
-        handleItemChange(val) {
-            console.log("active item:", val);
-            setTimeout(_ => {
-                if (val.indexOf("California") > -1 && !this.options2[0].cities.length) {
-                    this.options2[0].cities = [{
-                        label: "Los Angeles"
-                    }];
-                } else if (
-                    val.indexOf("Florida") > -1 &&
-                    !this.options2[1].cities.length
-                ) {
-                    this.options2[1].cities = [{
-                        label: "Orlando"
-                    }];
-                }
-            }, 300);
+  created() {
+    const component = this;
+    db.ref("play-tracking").once("value", function(snap) {
+      const trackingData = snap.val();
+
+      for (var buildVersion in trackingData) {
+        const dateData = trackingData[buildVersion];
+        var dateOptions = [];
+
+        for (var date in dateData) {
+          const dateOption = {
+            label: date,
+            value: dateData[date]
+          };
+          dateOptions.push(dateOption);
         }
-    }
+
+        const option = {
+          label: buildVersion,
+          value: dateOptions
+        };
+        component.buildVersionOptions.push(option);
+      }
+    });
+  },
 };
 </script>
 
 <style>
 #app {
-    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 
 body {
-    background: #fefefe;
+  background: #fefefe;
 }
 </style>
