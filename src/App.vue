@@ -18,33 +18,33 @@ import Timeline from "./components/Timeline.vue";
 import { db } from "./firebase";
 
 export default {
-    name: "app",
-    components: {
-        Timeline
-    },
+  name: "app",
+  components: {
+    Timeline
+  },
 
-    props: ["playTrackingRef"],
+  props: ["playTrackingRef"],
 
-    data() {
-        return {
-            // first selector
-            buildVersionOptions: [],
-            // second selector
-            testDateOptions: [],
-            selectedDateOptions: [],
-        };
-    },
+  data() {
+    return {
+      // first selector
+      buildVersionOptions: [],
+      // second selector
+      testDateOptions: [],
+      selectedDateOptions: []
+    };
+  },
 
-    computed: {
-        selectedDataSets: function () {
-            const selectedDataSets = {}
-            this.selectedDateOptions.forEach(dateOption => {
-                selectedDataSets[dateOption.label] = dateOption.value
-            })
+  computed: {
+    selectedDataSets: function() {
+      const selectedDataSets = {};
+      this.selectedDateOptions.forEach(dateOption => {
+        selectedDataSets[dateOption.label] = dateOption.value;
+      });
 
-            return selectedDataSets
-        }
-    },
+      return selectedDataSets;
+    }
+  },
 
   created() {
     const component = this;
@@ -70,7 +70,7 @@ export default {
         component.buildVersionOptions.push(option);
       }
     });
-  },
+  }
 };
 </script>
 
