@@ -6,7 +6,7 @@
         </el-option>
     </el-select>
     <el-select v-model="selectedDateOptions" multiple collapse-tags style="margin-left: 20px;" placeholder="Select test date">
-        <el-option v-for="testDateOption in testDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
+        <el-option v-for="testDateOption in sortedDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
         </el-option>
     </el-select>
     <timeline v-if="selectedDateOptions" :rawData="selectedDataSets"></timeline>
@@ -43,6 +43,13 @@ export default {
       });
 
       return selectedDataSets;
+    },
+
+    sortedDateOptions() {
+      if (this.testDateOptions.length == 0) return []
+      return this.testDateOptions
+        .slice()
+        .sort((a, b) => new Date(a.label) - new Date(b.label));
     }
   },
 
@@ -70,13 +77,20 @@ export default {
         component.buildVersionOptions.push(option);
       }
     });
+  },
+
+  methods: {
+    onTimelineReady: function() {
+      console.log("Timeline ready.");
+    }
   }
 };
 </script>
 
 <style>
 #app {
-  font-family: "Myriad Pro", "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-family: "Myriad Pro", "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -89,7 +103,7 @@ export default {
   text-align: left;
   margin-left: 20px;
 
-  background: -webkit-linear-gradient(45deg, #21D4FD 0%, #B721FF 23%);
+  background: -webkit-linear-gradient(45deg, #21d4fd 0%, #b721ff 23%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

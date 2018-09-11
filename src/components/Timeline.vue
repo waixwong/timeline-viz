@@ -55,7 +55,7 @@ const eventPalette = new DistinctColors({
 
 export default {
   props: {
-    rawData: Object
+    rawData: Object,
   },
 
   data() {
@@ -85,7 +85,7 @@ export default {
           axis: 10 // minimal margin between items and the axis
         },
         orientation: "top",
-        showMajorLabels: false
+        showMajorLabels: false,
       }
     };
   },
@@ -139,7 +139,7 @@ export default {
 
               const sequenceItem = {
                 className: "sequence",
-                content: "@ " + (sequence.index + 1),
+                //content: "@ " + (sequence.index + 1),
                 title: "duration: " + duration,
                 start: startTime,
                 style:
@@ -226,7 +226,7 @@ export default {
             const errorItems = errorData.map(element => ({
               className: "error",
               start: element.time,
-              style: "color: red;",
+              style: "color: #dd5757;",
               title: element.name,
               type: "point",
               group: groupId,
@@ -280,6 +280,9 @@ export default {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* this is the group header */
@@ -314,21 +317,23 @@ export default {
   min-height: 36px;
   border-color: transparent;
   border-radius: 3px;
+  justify-content: center;
   margin-top: 6px;
+  display: flex;
+  align-items: flex-end;
+  align-self: center;
 }
 
 .timeline .chunk:hover {
   border-color: #ffd00066;
 }
 
-.timeline .event {
+.timeline .event,
+.timeline .error {
+  margin-top: 1px;
   border-radius: 3px;
   border-width: 3px;
   border-color: inherit;
-}
-
-.timeline .error {
-  border-color: #dd5757;
 }
 
 .timeline .vis-tooltip {
