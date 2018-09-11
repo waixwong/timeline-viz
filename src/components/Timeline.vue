@@ -1,9 +1,9 @@
 <template>
 <div class="timeline">
     <div style="margin: 15px 0;"></div>
-    <el-checkbox-group v-model="checkboxGroup1">
+    <!-- <el-checkbox-group v-model="checkboxGroup1">
         <el-checkbox-button v-for="toggle in toggles" :label="toggle" :key="toggle">{{toggle}}</el-checkbox-button>
-    </el-checkbox-group>
+    </el-checkbox-group> -->
 </div>
 </template>
 
@@ -50,12 +50,12 @@ export default {
       options: {
         min: 0,
         max: 1100,
-        editable: false,
+        showCurrentTime: true,
         stack: false,
         stackSubgroups: true,
-        showCurrentTime: true,
+        horizontalScroll: true,
         margin: {
-          item: 6, // minimal margin between items
+          item: 1, // minimal margin between items
           axis: 10 // minimal margin between items and the axis
         },
         orientation: "top",
@@ -84,10 +84,11 @@ export default {
         for (const date in newData) {
           const trackingsForDate = newData[date];
           for (const testSessionId in trackingsForDate) {
-            const groupId = date + "-" + testSessionId.slice(-4);
+            const groupId = date + "-" + testSessionId.slice(-3);
             const rawTrackingData = trackingsForDate[testSessionId];
 
             this.groups.add({
+              className: 'timeline-group',
               id: groupId,
               subgroupOrder: function(a, b) {
                 return a.subgroupOrder - b.subgroupOrder;
@@ -103,16 +104,17 @@ export default {
             // Process Sequences
             const sequences = convertData(rawTrackingData.sequences);
             const sequenceItems = sequences.map(element => ({
-              classNames: "sequence",
+              className: "sequence",
               content: "@ " + (element.index + 1),
               start: element.start,
               style:
                 "background-color: " +
-                sequencePalette[element.index].alpha(0.4).css(),
+                sequencePalette[element.index].alpha(0.3).css(),
               end: element.end ? element.end : element.start + 150,
               type: "background",
               group: groupId
             }));
+
             this.items.add(sequenceItems);
 
             // Process Chunks
@@ -132,9 +134,8 @@ export default {
                   (((1 << 24) * Math.random()) | 0).toString(16) +
                   "88;",
                 type: element.end ? "range" : "box",
-                group: groupId
+                group: groupId,
                 //subgroup: "chunks",
-                //subgroupOrder: 1
               };
               this.items.add(item);
             });
@@ -148,24 +149,22 @@ export default {
               type: "point",
               group: groupId,
               subgroup: "events",
-              subgroupOrder: 2
             }));
             this.items.add(eventItems);
 
             /*
-                        // Process Timelines
-                        const timelines = convertData(rawTrackingData.timelines);
-                        const timelineItems = timelines.map(element => ({
-                          content: element.name,
-                          start: element.start,
-                          end: element.end,
-                          group: groupId,
-                          subgroup: "timelines",
-                          subgroupOrder: 0
-                        }));
-                        //this.items.add(timelineItems);
-
-                        */
+                                    // Process Timelines
+                                    const timelines = convertData(rawTrackingData.timelines);
+                                    const timelineItems = timelines.map(element => ({
+                                      content: element.name,
+                                      start: element.start,
+                                      end: element.end,
+                                      group: groupId,
+                                      subgroup: "timelines",
+                                      subgroupOrder: 0
+                                    }));
+                                    //this.items.add(timelineItems);
+                                    */
 
             // Process Errors
             const errorData = convertData(rawTrackingData.errors);
@@ -194,46 +193,69 @@ export default {
 /* This is the entire panel */
 
 .timeline * {
-  color: #444;
-  font-size: 10pt;
+  color: #777;
 }
 
+/* margin of the whole timeline panel */
 .timeline .vis-timeline {
-  margin-top: 10px;
-}
-
-.timeline .vis-panel {
+  margin: 20px;
   border: 0;
 }
 
-.timeline .vis-label .vis-inner {
-  min-height: 55px;
+/* hide border */
+.timeline .vis-panel,
+.timeline .vis-label,
+.timeline .vis-group {
+  border: 0;
 }
 
-.timeline .vis-time-axis,
-.timeline .vis-labelset {
-  background-color: #f0f0f0;
+.timeline .vis-item {
+  font-size: 10pt;
 }
 
-.timeline .vis-timeline {
-  border-color: transparent;
+/* this is the group content */
+.timeline .timeline-group {
+  margin-top: 10px;
+  background-color: #f0f0f048;
+  border-radius: 9pt;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  min-height: 50px;
 }
 
-.timeline .vis-content .vis-group {
-  border-bottom: 1px solid #eee;
+/* this is the group header */
+.timeline .vis-label.timeline-group {
+  padding: 5px;
+  /* background-color: #bebebe52; */
+  border-top-left-radius: 9pt;
+  border-bottom-left-radius: 10pt;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+}
+
+/* header text */
+.timeline .vis-label.timeline-group *{
+    color: #787878;
+}
+
+/* time axis text */
+.timeline .vis-time-axis *{
+  color: #409EFF;
+}
+
+.timeline .sequence {
+  min-height: 50px;
+}
+
+.timeline .sequence * {
+  color: #ddd;
 }
 
 .timeline .chunk {
-  height: 50px;
+  min-height: 36px;
   border-color: transparent;
   border-radius: 3px;
-}
-
-.timeline .chunk {
-  height: 50px;
-  border-width: 2px;
-  border-color: transparent;
-  border-radius: 2px;
 }
 
 .timeline .chunk:hover {
@@ -243,10 +265,16 @@ export default {
 .timeline .event {
   border-radius: 3px;
   border-width: 3px;
-  border-color: #ffd00066;
+  border-color: #777;
 }
 
 .timeline .error {
   border-color: #dd5757;
+}
+
+.timeline .vis-tooltip {
+  background-color: rgba(127, 225, 255, 0.527);
+  border-radius: 6px;
+  border-color: transparent;
 }
 </style>

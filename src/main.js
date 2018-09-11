@@ -18,3 +18,6 @@ new Vue({
     render: h => h(App),
     el: '#app'
 })
+
+// Deploy Guide
+// https://cli.vuejs.org/guide/deployment.html#amazon-s3

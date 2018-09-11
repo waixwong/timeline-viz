@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-    <h1>Choose a Build</h1>
+    <h1 class="title">Test Insight</h1>
     <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
         <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
         </el-option>
@@ -76,12 +76,22 @@ export default {
 
 <style>
 #app {
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: "Myriad Pro", "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.title {
+  font-size: 30pt;
+  text-align: left;
+  margin-left: 20px;
+
+  background: -webkit-linear-gradient(45deg, #21D4FD 0%, #B721FF 23%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 body {
