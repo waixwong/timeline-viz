@@ -9,7 +9,7 @@
         <el-option v-for="testDateOption in testDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
         </el-option>
     </el-select>
-    <timeline :rawData="selectedDataSets"></timeline>
+    <timeline v-if="selectedDateOptions" :rawData="selectedDataSets"></timeline>
 </div>
 </template>
 

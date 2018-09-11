@@ -1,6 +1,7 @@
 <template>
 <div class="timeline">
-    <div style="margin: 15px 0;"></div>
+    <!-- <el-switch v-model="showCompleteResultsOnly" active-color="#13ce66" inactive-color="#ff4949" active-text="Show complete tests only">
+    </el-switch> -->
     <!-- <el-checkbox-group v-model="checkboxGroup1">
         <el-checkbox-button v-for="toggle in toggles" :label="toggle" :key="toggle">{{toggle}}</el-checkbox-button>
     </el-checkbox-group> -->
@@ -19,12 +20,36 @@ const convertData = function(rawObject) {
 // http://tools.medialab.sciences-po.fr/iwanthue/
 const sequencePalette = new DistinctColors({
   count: 8,
-  hueMin: 0,
-  hueMax: 258,
-  chromaMin: 8.7,
-  chromaMax: 40.5,
-  lightMin: 7,
-  lightMax: 40,
+  hueMin: 208,
+  hueMax: 310,
+  chromaMin: 8,
+  chromaMax: 80,
+  lightMin: 20,
+  lightMax: 68,
+  quality: 50
+});
+
+var chunkNames = [];
+const chunkPalette = new DistinctColors({
+  count: 15,
+  hueMin: 4,
+  hueMax: 350,
+  chromaMin: 10,
+  chromaMax: 100,
+  lightMin: 50,
+  lightMax: 100,
+  quality: 50
+});
+
+var eventNames = [];
+const eventPalette = new DistinctColors({
+  count: 15,
+  hueMin: 290,
+  hueMax: 350,
+  chromaMin: 0,
+  chromaMax: 100,
+  lightMin: 0,
+  lightMax: 33,
   quality: 50
 });
 
@@ -35,6 +60,7 @@ export default {
 
   data() {
     return {
+      showCompleteResultsOnly: true,
       checkboxGroup1: ["Shanghai"],
       toggles: [
         "Show Sequences",
@@ -88,7 +114,7 @@ export default {
             const rawTrackingData = trackingsForDate[testSessionId];
 
             this.groups.add({
-              className: 'timeline-group',
+              className: "timeline-group",
               id: groupId,
               subgroupOrder: function(a, b) {
                 return a.subgroupOrder - b.subgroupOrder;
@@ -102,69 +128,98 @@ export default {
             });
 
             // Process Sequences
-            const sequences = convertData(rawTrackingData.sequences);
-            const sequenceItems = sequences.map(element => ({
-              className: "sequence",
-              content: "@ " + (element.index + 1),
-              start: element.start,
-              style:
-                "background-color: " +
-                sequencePalette[element.index].alpha(0.3).css(),
-              end: element.end ? element.end : element.start + 150,
-              type: "background",
-              group: groupId
-            }));
+            for (const sequenceKey in rawTrackingData.sequences) {
+              const sequence = rawTrackingData.sequences[sequenceKey];
+              const startTime = sequence.start;
+              const endTime = sequence.end;
+              var duration = 0;
+              if (endTime) {
+                duration = endTime - startTime;
+              }
 
-            this.items.add(sequenceItems);
-
-            // Process Chunks
-            const chunks = convertData(rawTrackingData.chunks);
-            chunks.forEach(element => {
-              // todo: fix optional element
-              if (element.optional) return;
-              if (!element.hasOwnProperty("start")) return;
-              const item = {
-                className: "chunk",
-                content: element.name,
-                start: element.start,
-                end: element.end,
+              const sequenceItem = {
+                className: "sequence",
+                content: "@ " + (sequence.index + 1),
+                title: "duration: " + duration,
+                start: startTime,
                 style:
                   "background-color: " +
-                  "#" +
-                  (((1 << 24) * Math.random()) | 0).toString(16) +
-                  "88;",
+                  sequencePalette[sequence.index].alpha(0.25).css(),
+                end: endTime ? endTime : startTime + 150,
+                type: "background",
+                group: groupId
+              };
+              this.items.add(sequenceItem);
+            }
+
+            // Process Chunks
+            for (const chunkKey in rawTrackingData.chunks) {
+              const element = rawTrackingData.chunks[chunkKey];
+              // todo: fix optional element
+              if (element.optional) continue;
+              if (!element.hasOwnProperty("start")) continue;
+
+              // figure out color
+              const chunkName = element.name;
+              if (chunkNames.indexOf(chunkName) < 0) {
+                chunkNames.push(chunkName);
+              }
+
+              const colorIndex =
+                chunkNames.indexOf(chunkName) % chunkPalette.length;
+              const color = chunkPalette[colorIndex];
+
+              const item = {
+                className: "chunk",
+                content: chunkName,
+                start: element.start,
+                end: element.end,
+                style: "background-color: " + color.alpha(0.55).css(),
                 type: element.end ? "range" : "box",
-                group: groupId,
+                group: groupId
                 //subgroup: "chunks",
               };
+
               this.items.add(item);
-            });
+            }
 
             // Process Events
-            const events = convertData(rawTrackingData.events);
-            const eventItems = events.map(element => ({
-              className: "event",
-              title: element.name,
-              start: element.time,
-              type: "point",
-              group: groupId,
-              subgroup: "events",
-            }));
-            this.items.add(eventItems);
+            for (const eventKey in rawTrackingData.events) {
+              const element = rawTrackingData.events[eventKey];
+              // figure out color
+              const eventName = element.name;
+              if (eventNames.indexOf(eventName) < 0) {
+                eventNames.push(eventName);
+              }
+              const colorIndex =
+                eventNames.indexOf(eventName) % eventPalette.length;
+              const color = eventPalette[colorIndex];
 
-            /*
-                                    // Process Timelines
-                                    const timelines = convertData(rawTrackingData.timelines);
-                                    const timelineItems = timelines.map(element => ({
-                                      content: element.name,
-                                      start: element.start,
-                                      end: element.end,
-                                      group: groupId,
-                                      subgroup: "timelines",
-                                      subgroupOrder: 0
-                                    }));
-                                    //this.items.add(timelineItems);
-                                    */
+              const item = {
+                className: "event",
+                title: element.name,
+                start: element.time,
+                type: "point",
+                style: "border-color: " + color.alpha(0.75).css(),
+                group: groupId,
+                subgroup: "events",
+                subgroupOrder: 2
+              };
+
+              this.items.add(item);
+            }
+
+            // // Process Timelines
+            // const timelines = convertData(rawTrackingData.timelines);
+            // const timelineItems = timelines.map(element => ({
+            //   content: element.name,
+            //   start: element.start,
+            //   end: element.end,
+            //   group: groupId,
+            //   subgroup: "timelines",
+            //   subgroupOrder: 0
+            // }));
+            // this.items.add(timelineItems);
 
             // Process Errors
             const errorData = convertData(rawTrackingData.errors);
@@ -197,12 +252,15 @@ export default {
 }
 
 /* margin of the whole timeline panel */
+
 .timeline .vis-timeline {
   margin: 20px;
+  margin-bottom: 50px;
   border: 0;
 }
 
 /* hide border */
+
 .timeline .vis-panel,
 .timeline .vis-label,
 .timeline .vis-group {
@@ -214,6 +272,7 @@ export default {
 }
 
 /* this is the group content */
+
 .timeline .timeline-group {
   margin-top: 10px;
   background-color: #f0f0f048;
@@ -224,6 +283,7 @@ export default {
 }
 
 /* this is the group header */
+
 .timeline .vis-label.timeline-group {
   padding: 5px;
   /* background-color: #bebebe52; */
@@ -235,27 +295,26 @@ export default {
 }
 
 /* header text */
-.timeline .vis-label.timeline-group *{
-    color: #787878;
+
+.timeline .vis-label.timeline-group * {
+  color: #787878;
 }
 
 /* time axis text */
-.timeline .vis-time-axis *{
-  color: #409EFF;
+
+.timeline .vis-time-axis * {
+  color: #409eff;
 }
 
 .timeline .sequence {
   min-height: 50px;
 }
 
-.timeline .sequence * {
-  color: #ddd;
-}
-
 .timeline .chunk {
   min-height: 36px;
   border-color: transparent;
   border-radius: 3px;
+  margin-top: 6px;
 }
 
 .timeline .chunk:hover {
@@ -265,7 +324,7 @@ export default {
 .timeline .event {
   border-radius: 3px;
   border-width: 3px;
-  border-color: #777;
+  border-color: inherit;
 }
 
 .timeline .error {
