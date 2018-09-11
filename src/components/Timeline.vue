@@ -139,7 +139,7 @@ export default {
 
               const sequenceItem = {
                 className: "sequence",
-                content: "@ " + (sequence.index + 1),
+                //content: "@ " + (sequence.index + 1),
                 title: "duration: " + duration,
                 start: startTime,
                 style:
@@ -176,8 +176,9 @@ export default {
                 end: element.end,
                 style: "background-color: " + color.alpha(0.55).css(),
                 type: element.end ? "range" : "box",
-                group: groupId
-                //subgroup: "chunks",
+                group: groupId,
+                subgroup: "chunks",
+                subgroupOrder: 0
               };
 
               this.items.add(item);
@@ -203,7 +204,7 @@ export default {
                 style: "border-color: " + color.alpha(0.75).css(),
                 group: groupId,
                 subgroup: "events",
-                subgroupOrder: 2
+                subgroupOrder: 1
               };
 
               this.items.add(item);
@@ -231,7 +232,7 @@ export default {
               type: "point",
               group: groupId,
               subgroup: "errors",
-              subgroupOrder: 1
+              subgroupOrder: 2
             }));
             this.items.add(errorItems);
           }
@@ -279,7 +280,7 @@ export default {
   border-radius: 9pt;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  min-height: 50px;
+  min-height: 56px;
 }
 
 /* this is the group header */
@@ -307,14 +308,13 @@ export default {
 }
 
 .timeline .sequence {
-  min-height: 50px;
+  min-height: 56px;
 }
 
 .timeline .chunk {
-  min-height: 36px;
   border-color: transparent;
   border-radius: 3px;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .timeline .chunk:hover {
@@ -324,10 +324,14 @@ export default {
 .timeline .event {
   border-radius: 3px;
   border-width: 3px;
+  margin-top: 3px;
   border-color: inherit;
 }
 
 .timeline .error {
+  margin-top: 1px;
+  border-radius: 3px;
+  border-width: 3px;
   border-color: #dd5757;
 }
 

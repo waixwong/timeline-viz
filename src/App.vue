@@ -87,7 +87,7 @@ export default {
 .title {
   font-size: 30pt;
   text-align: left;
-  margin-left: 20px;
+  margin-left: 25px;
 
   background: -webkit-linear-gradient(45deg, #21D4FD 0%, #B721FF 23%);
   -webkit-background-clip: text;
