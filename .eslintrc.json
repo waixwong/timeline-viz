@@ -1,3 +1,4 @@
 {
-    "extends": ["plugin:vue/essential"]
+    "extends": ["plugin:vue/essential", "prettier"],
+    "plugins": ["vue"]
 }

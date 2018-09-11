@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-    <h1>Choose Build</h1>
+    <h1>Choose a Build</h1>
     <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
         <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
         </el-option>

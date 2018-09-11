@@ -15,6 +15,7 @@ const convertData = function(rawObject) {
   return Object.keys(rawObject).map(key => rawObject[key]);
 };
 
+// Generate
 // http://tools.medialab.sciences-po.fr/iwanthue/
 const sequencePalette = new DistinctColors({
   count: 8,
@@ -52,6 +53,7 @@ export default {
         editable: false,
         stack: false,
         stackSubgroups: true,
+        showCurrentTime: true,
         margin: {
           item: 6, // minimal margin between items
           axis: 10 // minimal margin between items and the axis
