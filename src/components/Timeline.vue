@@ -42,12 +42,12 @@ const chunkPalette = new DistinctColors({
 var eventNames = [];
 const eventPalette = new DistinctColors({
   count: 15,
-  hueMin: 290,
-  hueMax: 350,
-  chromaMin: 0,
+  hueMin: 0,
+  hueMax: 360,
+  chromaMin: 48,
   chromaMax: 100,
-  lightMin: 0,
-  lightMax: 33,
+  lightMin: 40,
+  lightMax: 60,
   quality: 50
 });
 
@@ -78,7 +78,6 @@ export default {
         min: 0,
         max: 1100,
         showCurrentTime: true,
-        editable: true,
         stack: false,
         stackSubgroups: true,
         horizontalScroll: true,
@@ -128,7 +127,7 @@ export default {
               className: dataIsComplete
                 ? "timeline-group"
                 : "timeline-group incomplete",
-              //visible: dataIsComplete,
+              visible: this.showCompleteResultsOnly ? dataIsComplete : true,
               subgroupOrder: function(a, b) {
                 return a.subgroupOrder - b.subgroupOrder;
               },
@@ -259,7 +258,7 @@ export default {
       this.incompleteGroups.forEach(element => {
         this.groups.update({
           id: element.id,
-          visible: this.showCompleteResultsOnly
+          visible: !this.showCompleteResultsOnly
         });
       });
     }
