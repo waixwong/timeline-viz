@@ -9,7 +9,9 @@
         <el-option v-for="testDateOption in sortedDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
         </el-option>
     </el-select>
-    <timeline v-if="selectedDateOptions" :rawData="selectedDataSets"></timeline>
+    <el-switch v-model="showCompleteResultsOnly" style="margin-left: 20px;" active-color="#13ce66" inactive-color="#ff4949" active-text="Show complete tests only">
+    </el-switch>
+    <timeline v-if="selectedDataSets" :rawData="selectedDataSets" :showCompleteResultsOnly="showCompleteResultsOnly"></timeline>
 </div>
 </template>
 
@@ -31,25 +33,28 @@ export default {
       buildVersionOptions: [],
       // second selector
       testDateOptions: [],
-      selectedDateOptions: []
+      selectedDateOptions: [],
+      showCompleteResultsOnly: true
     };
   },
 
   computed: {
-    selectedDataSets: function() {
-      const selectedDataSets = {};
-      this.selectedDateOptions.forEach(dateOption => {
-        selectedDataSets[dateOption.label] = dateOption.value;
-      });
-
-      return selectedDataSets;
-    },
-
     sortedDateOptions() {
-      if (this.testDateOptions.length == 0) return []
+      if (this.testDateOptions.length == 0) return [];
       return this.testDateOptions
         .slice()
         .sort((a, b) => new Date(a.label) - new Date(b.label));
+    },
+
+    selectedDataSets: function() {
+      if (this.selectedDateOptions.length == 0) return null;
+      const processedDataSets = {};
+      // Process selected data sets.
+      this.selectedDateOptions.forEach(dateOption => {
+        processedDataSets[dateOption.label] = dateOption.value;
+      });
+
+      return processedDataSets;
     }
   },
 
@@ -77,12 +82,6 @@ export default {
         component.buildVersionOptions.push(option);
       }
     });
-  },
-
-  methods: {
-    onTimelineReady: function() {
-      console.log("Timeline ready.");
-    }
   }
 };
 </script>

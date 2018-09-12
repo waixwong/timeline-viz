@@ -1,7 +1,5 @@
 <template>
 <div class="timeline">
-    <!-- <el-switch v-model="showCompleteResultsOnly" active-color="#13ce66" inactive-color="#ff4949" active-text="Show complete tests only">
-    </el-switch> -->
     <!-- <el-checkbox-group v-model="checkboxGroup1">
         <el-checkbox-button v-for="toggle in toggles" :label="toggle" :key="toggle">{{toggle}}</el-checkbox-button>
     </el-checkbox-group> -->
@@ -56,11 +54,11 @@ const eventPalette = new DistinctColors({
 export default {
   props: {
     rawData: Object,
+    showCompleteResultsOnly: Boolean
   },
 
   data() {
     return {
-      showCompleteResultsOnly: true,
       checkboxGroup1: ["Shanghai"],
       toggles: [
         "Show Sequences",
@@ -69,6 +67,9 @@ export default {
         "Show Timelines",
         "Show Errors"
       ],
+      timeline: null,
+
+      incompleteGroups: [],
 
       // Timeline data
       items: new vis.DataSet(),
@@ -77,6 +78,7 @@ export default {
         min: 0,
         max: 1100,
         showCurrentTime: true,
+        editable: true,
         stack: false,
         stackSubgroups: true,
         horizontalScroll: true,
@@ -85,14 +87,14 @@ export default {
           axis: 10 // minimal margin between items and the axis
         },
         orientation: "top",
-        showMajorLabels: false,
+        showMajorLabels: false
       }
     };
   },
 
   mounted() {
     // Create timeline
-    var timeline = new vis.Timeline(
+    this.timeline = new vis.Timeline(
       this.$el,
       this.items,
       this.groups,
@@ -100,22 +102,33 @@ export default {
     );
   },
 
+  methods: {},
+
   watch: {
     rawData: {
       immediate: true,
       handler: function(newData) {
         this.groups.clear();
         this.items.clear();
+        this.incompleteGroups = [];
 
         for (const date in newData) {
           const trackingsForDate = newData[date];
+
           for (const testSessionId in trackingsForDate) {
             const groupId = date + "-" + testSessionId.slice(-3);
             const rawTrackingData = trackingsForDate[testSessionId];
 
-            this.groups.add({
-              className: "timeline-group",
+            // Process Sequences
+            const dataIsComplete =
+              Object.keys(rawTrackingData.sequences).length >= 5;
+
+            const newGroup = {
               id: groupId,
+              className: dataIsComplete
+                ? "timeline-group"
+                : "timeline-group incomplete",
+              //visible: dataIsComplete,
               subgroupOrder: function(a, b) {
                 return a.subgroupOrder - b.subgroupOrder;
               },
@@ -125,9 +138,12 @@ export default {
                 events: false,
                 errors: false
               }
-            });
+            };
 
-            // Process Sequences
+            // Create a new group for each test session
+            this.groups.add(newGroup);
+            if (!dataIsComplete) this.incompleteGroups.push(newGroup);
+
             for (const sequenceKey in rawTrackingData.sequences) {
               const sequence = rawTrackingData.sequences[sequenceKey];
               const startTime = sequence.start;
@@ -226,7 +242,7 @@ export default {
             const errorItems = errorData.map(element => ({
               className: "error",
               start: element.time,
-              style: "color: #dd5757;",
+              style: "border-color: #dd5757;",
               title: element.name,
               type: "point",
               group: groupId,
@@ -237,6 +253,15 @@ export default {
           }
         }
       }
+    },
+
+    showCompleteResultsOnly: function() {
+      this.incompleteGroups.forEach(element => {
+        this.groups.update({
+          id: element.id,
+          visible: this.showCompleteResultsOnly
+        });
+      });
     }
   }
 };
@@ -280,9 +305,6 @@ export default {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   min-height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* this is the group header */
