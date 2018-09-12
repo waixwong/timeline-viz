@@ -1,7 +1,5 @@
 <template>
 <div class="timeline">
-    <!-- <el-switch v-model="showCompleteResultsOnly" active-color="#13ce66" inactive-color="#ff4949" active-text="Show complete tests only">
-    </el-switch> -->
     <!-- <el-checkbox-group v-model="checkboxGroup1">
         <el-checkbox-button v-for="toggle in toggles" :label="toggle" :key="toggle">{{toggle}}</el-checkbox-button>
     </el-checkbox-group> -->
@@ -19,12 +17,12 @@ const convertData = function(rawObject) {
 // Generate
 // http://tools.medialab.sciences-po.fr/iwanthue/
 const sequencePalette = new DistinctColors({
-  count: 8,
-  hueMin: 208,
-  hueMax: 310,
+  count: 6,
+  hueMin: 33,
+  hueMax: 312,
   chromaMin: 8,
   chromaMax: 80,
-  lightMin: 20,
+  lightMin: 29,
   lightMax: 68,
   quality: 50
 });
@@ -44,23 +42,23 @@ const chunkPalette = new DistinctColors({
 var eventNames = [];
 const eventPalette = new DistinctColors({
   count: 15,
-  hueMin: 290,
-  hueMax: 350,
-  chromaMin: 0,
+  hueMin: 62,
+  hueMax: 360,
+  chromaMin: 28,
   chromaMax: 100,
-  lightMin: 0,
-  lightMax: 33,
+  lightMin: 35,
+  lightMax: 60,
   quality: 50
 });
 
 export default {
   props: {
-    rawData: Object
+    rawData: Object,
+    showCompleteResultsOnly: Boolean
   },
 
   data() {
     return {
-      showCompleteResultsOnly: true,
       checkboxGroup1: ["Shanghai"],
       toggles: [
         "Show Sequences",
@@ -69,12 +67,14 @@ export default {
         "Show Timelines",
         "Show Errors"
       ],
+      timeline: null,
+      incompleteGroups: [],
 
       // Timeline data
       items: new vis.DataSet(),
       groups: new vis.DataSet(),
       options: {
-        min: 0,
+        min: -15,
         max: 1100,
         showCurrentTime: true,
         stack: false,
@@ -92,7 +92,7 @@ export default {
 
   mounted() {
     // Create timeline
-    var timeline = new vis.Timeline(
+    this.timeline = new vis.Timeline(
       this.$el,
       this.items,
       this.groups,
@@ -100,22 +100,36 @@ export default {
     );
   },
 
+  methods: {},
+
   watch: {
     rawData: {
       immediate: true,
       handler: function(newData) {
+        // clear existing data
         this.groups.clear();
         this.items.clear();
+        this.incompleteGroups = [];
 
         for (const date in newData) {
           const trackingsForDate = newData[date];
+
           for (const testSessionId in trackingsForDate) {
+            var trackedItems = [];
+
             const groupId = date + "-" + testSessionId.slice(-3);
             const rawTrackingData = trackingsForDate[testSessionId];
 
-            this.groups.add({
-              className: "timeline-group",
+            // Process Sequences
+            const dataIsComplete =
+              Object.keys(rawTrackingData.sequences).length >= 5;
+
+            const newGroup = {
               id: groupId,
+              className: dataIsComplete
+                ? "timeline-group"
+                : "timeline-group incomplete",
+              visible: this.showCompleteResultsOnly ? dataIsComplete : true,
               subgroupOrder: function(a, b) {
                 return a.subgroupOrder - b.subgroupOrder;
               },
@@ -125,40 +139,67 @@ export default {
                 events: false,
                 errors: false
               }
-            });
+            };
 
-            // Process Sequences
+            // Create a new group for each test session
+            this.groups.add(newGroup);
+            if (!dataIsComplete) this.incompleteGroups.push(newGroup);
+
+            var sessionStartTime;
+            // Process sequences
             for (const sequenceKey in rawTrackingData.sequences) {
               const sequence = rawTrackingData.sequences[sequenceKey];
+
               const startTime = sequence.start;
               const endTime = sequence.end;
-              var duration = 0;
-              if (endTime) {
-                duration = endTime - startTime;
-              }
+              if (!endTime && dataIsComplete) { console.log(sessionStartTime)}
+
+              if (sequence['index'] === 0) { sessionStartTime = startTime; }
 
               const sequenceItem = {
                 className: "sequence",
                 //content: "@ " + (sequence.index + 1),
-                title: "duration: " + duration,
                 start: startTime,
                 style:
                   "background-color: " +
                   sequencePalette[sequence.index].alpha(0.25).css(),
-                end: endTime ? endTime : startTime + 150,
+                end: endTime ? endTime : 800.0 + sessionStartTime,
                 type: "background",
                 group: groupId
               };
-              this.items.add(sequenceItem);
+              trackedItems.push(sequenceItem);
             }
 
             // Process Chunks
+            // todo: fix optional element
+            // in this version. optional and repeatable chunks' endtimes are not logged correctly.
+            // this attempts to fix the issue by using next chunk's start time as the missing end time.
+            const chunkStartFrames = Object.values(rawTrackingData.chunks).map(element => element.start);
+            const uniqueChunkStartFrames = Array.from(new Set(chunkStartFrames.sort()))
+            
             for (const chunkKey in rawTrackingData.chunks) {
               const element = rawTrackingData.chunks[chunkKey];
-              // todo: fix optional element
-              if (element.optional) continue;
               if (!element.hasOwnProperty("start")) continue;
 
+              // get chunk start and end time
+              const chunkStartTime = element.start;
+              const chunkEndTime = element.end;
+
+              if (!chunkEndTime) {
+                const index = uniqueChunkStartFrames.indexOf(chunkStartTime)
+                if (index < uniqueChunkStartFrames.length-1)
+                {
+                  chunkEndTime = uniqueChunkStartFrames[index + 1]
+                }
+              }
+/*
+              if (dataIsComplete && !chunkEndTime) {
+                console.log(testSessionId)
+                console.log(chunkName)
+                console.log(chunkKey)
+                console.log(uniqueChunkStartFrames)
+              }
+*/
               // figure out color
               const chunkName = element.name;
               if (chunkNames.indexOf(chunkName) < 0) {
@@ -171,17 +212,18 @@ export default {
 
               const item = {
                 className: "chunk",
+                title: chunkName,
                 content: chunkName,
-                start: element.start,
-                end: element.end,
+                start: chunkStartTime,
+                end: chunkEndTime,
                 style: "background-color: " + color.alpha(0.55).css(),
-                type: element.end ? "range" : "box",
+                type: chunkEndTime ? "range" : "point",
                 group: groupId,
                 subgroup: "chunks",
                 subgroupOrder: 0
               };
 
-              this.items.add(item);
+              trackedItems.push(item);
             }
 
             // Process Events
@@ -207,7 +249,7 @@ export default {
                 subgroupOrder: 1
               };
 
-              this.items.add(item);
+              trackedItems.push(item);
             }
 
             // // Process Timelines
@@ -220,24 +262,43 @@ export default {
             //   subgroup: "timelines",
             //   subgroupOrder: 0
             // }));
-            // this.items.add(timelineItems);
+            // trackedItems.push(timelineItems);
 
             // Process Errors
-            const errorData = convertData(rawTrackingData.errors);
-            const errorItems = errorData.map(element => ({
-              className: "error",
-              start: element.time,
-              style: "color: red;",
-              title: element.name,
-              type: "point",
-              group: groupId,
-              subgroup: "errors",
-              subgroupOrder: 2
-            }));
-            this.items.add(errorItems);
+            for (const errorKey in rawTrackingData.errors) {
+              const element = rawTrackingData.errors[errorKey];
+              const errorItem = {
+                className: "error",
+                start: element.time,
+                style: "border-color: #dd5757;",
+                title: element.name,
+                type: "point",
+                group: groupId,
+                subgroup: "errors",
+                subgroupOrder: 2
+              };
+              trackedItems.push(errorItem);
+            }
+
+            trackedItems.forEach(item => {
+              if (item.start) item.start -= sessionStartTime;
+              if (item.end) item.end -= sessionStartTime;
+            });
+
+            // add tracked items to the timeline
+            this.items.add(trackedItems);
           }
         }
       }
+    },
+
+    showCompleteResultsOnly: function() {
+      this.incompleteGroups.forEach(element => {
+        this.groups.update({
+          id: element.id,
+          visible: !this.showCompleteResultsOnly
+        });
+      });
     }
   }
 };
@@ -255,7 +316,7 @@ export default {
 /* margin of the whole timeline panel */
 
 .timeline .vis-timeline {
-  margin: 20px;
+  margin-top: 30px;
   margin-bottom: 50px;
   border: 0;
 }
@@ -293,6 +354,8 @@ export default {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border: none;
+  display: flex;
+  align-items: center;
 }
 
 /* header text */
@@ -315,13 +378,16 @@ export default {
   border-color: transparent;
   border-radius: 3px;
   margin-top: 5px;
+  min-height: 30px;
 }
 
 .timeline .chunk:hover {
   border-color: #ffd00066;
 }
 
-.timeline .event {
+.timeline .event,
+.timeline .error {
+  margin-top: 1px;
   border-radius: 3px;
   border-width: 3px;
   margin-top: 3px;

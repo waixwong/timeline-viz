@@ -1,15 +1,24 @@
 <template>
 <div id="app">
-    <h1 class="title">Test Insight</h1>
-    <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
-        <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
-        </el-option>
-    </el-select>
-    <el-select v-model="selectedDateOptions" multiple collapse-tags style="margin-left: 20px;" placeholder="Select test date">
-        <el-option v-for="testDateOption in testDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
-        </el-option>
-    </el-select>
-    <timeline v-if="selectedDateOptions" :rawData="selectedDataSets"></timeline>
+    <el-card shadow="hover" style="border: none; border-radius: 7px">
+        <el-row :gutter="12" type="flex" justify="center">
+            <el-col :span="6" class="title">Test Insight</el-col>
+            <el-col :span="18" style = "display:flex;align-items:center;">
+                <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
+                    <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
+                    </el-option>
+                </el-select>
+                <el-select v-model="selectedDateOptions" multiple collapse-tags style="margin-left: 20px;" placeholder="Select test date">
+                    <el-option v-for="testDateOption in sortedDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
+                    </el-option>
+                </el-select>
+                <el-switch v-model="showCompleteResultsOnly" style="margin-left: 20px;" active-text="Show complete tests only">
+                </el-switch>
+            </el-col>
+        </el-row>
+    </el-card>
+    <timeline v-if="selectedDataSets" :rawData="selectedDataSets" :showCompleteResultsOnly="showCompleteResultsOnly"></timeline>
+
 </div>
 </template>
 
@@ -31,18 +40,28 @@ export default {
       buildVersionOptions: [],
       // second selector
       testDateOptions: [],
-      selectedDateOptions: []
+      selectedDateOptions: [],
+      showCompleteResultsOnly: true
     };
   },
 
   computed: {
+    sortedDateOptions() {
+      if (this.testDateOptions.length == 0) return [];
+      return this.testDateOptions
+        .slice()
+        .sort((a, b) => new Date(a.label) - new Date(b.label));
+    },
+
     selectedDataSets: function() {
-      const selectedDataSets = {};
+      if (this.selectedDateOptions.length == 0) return null;
+      const processedDataSets = {};
+      // Process selected data sets.
       this.selectedDateOptions.forEach(dateOption => {
-        selectedDataSets[dateOption.label] = dateOption.value;
+        processedDataSets[dateOption.label] = dateOption.value;
       });
 
-      return selectedDataSets;
+      return processedDataSets;
     }
   },
 
@@ -76,25 +95,26 @@ export default {
 
 <style>
 #app {
-  font-family: "Myriad Pro", "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .title {
   font-size: 30pt;
+  font-weight: bold;
   text-align: left;
-  margin-left: 25px;
-
-  background: -webkit-linear-gradient(45deg, #21D4FD 0%, #B721FF 23%);
+  background: -webkit-linear-gradient(45deg, #21d4fd 6%, #b721ff 73%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 body {
+  font-family: "Myriad Pro", "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   background: #fefefe;
+  padding: 25px;
+  min-width: 950px;
 }
 </style>

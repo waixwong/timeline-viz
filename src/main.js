@@ -9,7 +9,7 @@ import Vuefire from 'vuefire'
 locale.use(lang)
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 Vue.use(Vuefire)
 
 // Initialize Firebase
