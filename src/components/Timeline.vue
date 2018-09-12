@@ -1,7 +1,9 @@
 <template>
 <div class="timeline">
-    <!-- <el-checkbox-group v-model="checkboxGroup1">
-        <el-checkbox-button v-for="toggle in toggles" :label="toggle" :key="toggle">{{toggle}}</el-checkbox-button>
+  <div ref="timelineContainer"></div>
+  <div v-show="!items.length" class="no-data-selected"><p>no data</p></div>
+    <!-- <el-checkbox-group v-model="checkboxGroup1" style="margin-top: 20px" @change="onToggleElementVisibility">
+        <el-checkbox v-for="toggle in toggles" :label="toggle" :key="toggle">{{toggle}}</el-checkbox>
     </el-checkbox-group> -->
 </div>
 </template>
@@ -9,6 +11,7 @@
 <script>
 import vis from "vis";
 import DistinctColors from "distinct-colors";
+import _ from "underscore";
 
 const convertData = function(rawObject) {
   return Object.keys(rawObject).map(key => rawObject[key]);
@@ -59,23 +62,22 @@ export default {
 
   data() {
     return {
-      checkboxGroup1: ["Shanghai"],
-      toggles: [
-        "Show Sequences",
-        "Show Chunks",
-        "Show Events",
-        "Show Timelines",
-        "Show Errors"
-      ],
-      timeline: null,
+      checkboxGroup1: [],
+      toggles: ["Show Chunks", "Show Events", "Show Timelines", "Show Errors"],
       incompleteGroups: [],
+
+      // Timeline elements
+      chunkItems: [],
+      eventItems: [],
+      errorItems: [],
+      timelineItems: [],
 
       // Timeline data
       items: new vis.DataSet(),
       groups: new vis.DataSet(),
       options: {
         min: -15,
-        max: 1100,
+        max: 950,
         showCurrentTime: true,
         stack: false,
         stackSubgroups: true,
@@ -86,26 +88,32 @@ export default {
         },
         orientation: "top",
         showMajorLabels: false
-      }
+      },
+      timeline: null
     };
   },
 
   mounted() {
-    // Create timeline
+    // Render timeline to this element
     this.timeline = new vis.Timeline(
-      this.$el,
+      this.$refs.timelineContainer,
       this.items,
       this.groups,
       this.options
     );
   },
 
-  methods: {},
+  methods: {
+    onToggleElementVisibility: function(params) {
+      console.log(params);
+    }
+  },
 
   watch: {
     rawData: {
       immediate: true,
       handler: function(newData) {
+        if (!newData) return;
         // clear existing data
         this.groups.clear();
         this.items.clear();
@@ -145,7 +153,16 @@ export default {
             this.groups.add(newGroup);
             if (!dataIsComplete) this.incompleteGroups.push(newGroup);
 
-            let sessionStartTime;
+            // Find the start time of the first sequence. This is time since Game start.
+            // todo: in next version start time will be tracked using time since LevelWasLoaded
+            // and this step will no longer be needed as sessionStartTime will always be 0.
+            const firstSequence = _.find(
+              Object.values(rawTrackingData.sequences),
+              function(element) {
+                return element.index == 0;
+              }
+            );
+            const sessionStartTime = firstSequence.start;
             // Process sequences
             for (const sequenceKey in rawTrackingData.sequences) {
               const sequence = rawTrackingData.sequences[sequenceKey];
@@ -153,18 +170,15 @@ export default {
               const startTime = sequence.start;
               const endTime = sequence.end;
 
-              if (sequence.index == 0) {
-                sessionStartTime = startTime;
-              }
-
               const sequenceItem = {
                 className: "sequence",
                 //content: "@ " + (sequence.index + 1),
+                index: sequence.index,
                 start: startTime,
                 style:
                   "background-color: " +
                   sequencePalette[sequence.index].alpha(0.25).css(),
-                end: isNaN(endTime) ? 800.0 + sessionStartTime : endTime,
+                end: endTime ? endTime : 820 + sessionStartTime,
                 type: "background",
                 group: groupId
               };
@@ -221,7 +235,7 @@ export default {
                 start: chunkStartTime,
                 end: chunkEndTime,
                 style: "background-color: " + color.alpha(0.55).css(),
-                type: isNaN(chunkEndTime) ? "point" : "range",
+                type: chunkEndTime ? "range" : "point",
                 group: groupId,
                 subgroup: "chunks",
                 subgroupOrder: 0
@@ -293,6 +307,14 @@ export default {
             this.items.add(trackedItems);
           }
         }
+
+        // Update the timeline Max time.
+        const timeMax = this.items.max("end").end;
+        this.options.max = timeMax + 60;
+        if (this.timeline) {
+          this.timeline.setOptions({ max: timeMax });
+          this.timeline.redraw();
+        }
       }
     },
 
@@ -315,6 +337,16 @@ export default {
 
 .timeline * {
   color: #777;
+}
+
+.timeline .no-data-selected {
+  margin-top: 20px;
+  background-color: #dddddd30;
+  border-radius: 7px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* margin of the whole timeline panel */

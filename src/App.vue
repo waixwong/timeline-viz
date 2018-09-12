@@ -17,7 +17,7 @@
             </el-col>
         </el-row>
     </el-card>
-    <timeline v-if="selectedDataSets" :rawData="selectedDataSets" :showCompleteResultsOnly="showCompleteResultsOnly"></timeline>
+    <timeline :rawData="selectedDataSets" :showCompleteResultsOnly="showCompleteResultsOnly"></timeline>
 
 </div>
 </template>
