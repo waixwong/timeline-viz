@@ -27,7 +27,7 @@ const sequencePalette = new DistinctColors({
   quality: 50
 });
 
-var chunkNames = [];
+let chunkNames = [];
 const chunkPalette = new DistinctColors({
   count: 15,
   hueMin: 4,
@@ -39,7 +39,7 @@ const chunkPalette = new DistinctColors({
   quality: 50
 });
 
-var eventNames = [];
+let eventNames = [];
 const eventPalette = new DistinctColors({
   count: 15,
   hueMin: 62,
@@ -115,7 +115,7 @@ export default {
           const trackingsForDate = newData[date];
 
           for (const testSessionId in trackingsForDate) {
-            var trackedItems = [];
+            let trackedItems = [];
 
             const groupId = date + "-" + testSessionId.slice(-3);
             const rawTrackingData = trackingsForDate[testSessionId];
@@ -145,16 +145,17 @@ export default {
             this.groups.add(newGroup);
             if (!dataIsComplete) this.incompleteGroups.push(newGroup);
 
-            var sessionStartTime;
+            let sessionStartTime;
             // Process sequences
             for (const sequenceKey in rawTrackingData.sequences) {
               const sequence = rawTrackingData.sequences[sequenceKey];
 
               const startTime = sequence.start;
               const endTime = sequence.end;
-              if (!endTime && dataIsComplete) { console.log(sessionStartTime)}
 
-              if (sequence['index'] === 0) { sessionStartTime = startTime; }
+              if (sequence.index == 0) {
+                sessionStartTime = startTime;
+              }
 
               const sequenceItem = {
                 className: "sequence",
@@ -163,7 +164,7 @@ export default {
                 style:
                   "background-color: " +
                   sequencePalette[sequence.index].alpha(0.25).css(),
-                end: endTime ? endTime : 800.0 + sessionStartTime,
+                end: isNaN(endTime) ? 800.0 + sessionStartTime : endTime,
                 type: "background",
                 group: groupId
               };
@@ -174,9 +175,13 @@ export default {
             // todo: fix optional element
             // in this version. optional and repeatable chunks' endtimes are not logged correctly.
             // this attempts to fix the issue by using next chunk's start time as the missing end time.
-            const chunkStartFrames = Object.values(rawTrackingData.chunks).map(element => element.start);
-            const uniqueChunkStartFrames = Array.from(new Set(chunkStartFrames.sort()))
-            
+            const chunkStartFrames = Object.values(rawTrackingData.chunks).map(
+              element => element.start
+            );
+            const uniqueChunkStartFrames = Array.from(
+              new Set(chunkStartFrames.sort())
+            );
+
             for (const chunkKey in rawTrackingData.chunks) {
               const element = rawTrackingData.chunks[chunkKey];
               if (!element.hasOwnProperty("start")) continue;
@@ -185,21 +190,20 @@ export default {
               const chunkStartTime = element.start;
               const chunkEndTime = element.end;
 
-              if (!chunkEndTime) {
-                const index = uniqueChunkStartFrames.indexOf(chunkStartTime)
-                if (index < uniqueChunkStartFrames.length-1)
-                {
-                  chunkEndTime = uniqueChunkStartFrames[index + 1]
+              if (isNaN(chunkEndTime)) {
+                const index = uniqueChunkStartFrames.indexOf(chunkStartTime);
+                if (index < uniqueChunkStartFrames.length - 1) {
+                  chunkEndTime = uniqueChunkStartFrames[index + 1];
                 }
               }
-/*
+              /*
               if (dataIsComplete && !chunkEndTime) {
                 console.log(testSessionId)
                 console.log(chunkName)
                 console.log(chunkKey)
                 console.log(uniqueChunkStartFrames)
               }
-*/
+              */
               // figure out color
               const chunkName = element.name;
               if (chunkNames.indexOf(chunkName) < 0) {
@@ -217,7 +221,7 @@ export default {
                 start: chunkStartTime,
                 end: chunkEndTime,
                 style: "background-color: " + color.alpha(0.55).css(),
-                type: chunkEndTime ? "range" : "point",
+                type: isNaN(chunkEndTime) ? "point" : "range",
                 group: groupId,
                 subgroup: "chunks",
                 subgroupOrder: 0
@@ -281,8 +285,8 @@ export default {
             }
 
             trackedItems.forEach(item => {
-              if (item.start) item.start -= sessionStartTime;
-              if (item.end) item.end -= sessionStartTime;
+              if (item.start) item.start = item.start - sessionStartTime;
+              if (item.end) item.end = item.end - sessionStartTime;
             });
 
             // add tracked items to the timeline
