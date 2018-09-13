@@ -2,8 +2,8 @@
 <div id="app">
     <el-card shadow="hover" style="border: none; border-radius: 7px">
         <el-row :gutter="12" type="flex" justify="center">
-            <el-col :span="6" class="title">Test Insight</el-col>
-            <el-col :span="18" style = "display:flex;align-items:center;">
+            <!-- <el-col :span="6" class="text title">Test Insight</el-col> -->
+            <el-col :span="24" style = "display:flex;align-items:center;">
                 <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
                     <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
                     </el-option>
@@ -105,6 +105,7 @@ export default {
   font-weight: bold;
   text-align: left;
   background: -webkit-linear-gradient(45deg, #21d4fd 6%, #b721ff 73%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
