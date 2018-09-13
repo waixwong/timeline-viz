@@ -4,13 +4,14 @@ import ElementUI from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/en';
 import locale from 'element-ui/lib/locale'
 import 'element-ui/lib/theme-chalk/index.css'
-import Vuefire from 'vuefire'
 import './plugins/element.js'
 
 locale.use(lang)
 
 Vue.config.productionTip = false
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI, {
+    locale
+})
 Vue.use(Vuefire)
 
 // Initialize Firebase

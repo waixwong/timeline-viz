@@ -15,8 +15,7 @@
     "moment": "^2.22.2",
     "underscore": "^1.9.1",
     "vis": "^4.21.0",
-    "vue": "^2.5.17",
-    "vuefire": "^1.4.5"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
