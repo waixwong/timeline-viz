@@ -9,13 +9,9 @@
 </template>
 
 <script>
-import vis from "vis";
-import DistinctColors from "distinct-colors";
-import _ from "underscore";
-
-const convertData = function(rawObject) {
-  return Object.keys(rawObject).map(key => rawObject[key]);
-};
+const vis = require('vis')
+const DistinctColors = require('distinct-colors')
+const _ = require('underscore')
 
 // Generate
 // http://tools.medialab.sciences-po.fr/iwanthue/

@@ -1,5 +1,5 @@
-import firebase from 'firebase/app' 
-import 'firebase/database'
+var firebase = require('firebase/app')
+require('firebase/database')
 
 // Initialize Firebase
 const config = {
@@ -14,4 +14,6 @@ const config = {
 firebase.initializeApp(config)
 const db = firebase.database()
 
-export { db }
+export {
+    db
+}

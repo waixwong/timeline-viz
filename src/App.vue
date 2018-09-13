@@ -1,20 +1,18 @@
 <template>
 <div id="app">
     <el-card shadow="hover" style="border: none; border-radius: 7px">
-        <el-row :gutter="12" type="flex" justify="center">
-            <!-- <el-col :span="6" class="text title">Test Insight</el-col> -->
-            <el-col :span="24" style = "display:flex;align-items:center;">
-                <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
-                    <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
-                    </el-option>
-                </el-select>
-                <el-select v-model="selectedDateOptions" multiple collapse-tags style="margin-left: 20px;" placeholder="Select test date">
-                    <el-option v-for="testDateOption in sortedDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
-                    </el-option>
-                </el-select>
-                <el-switch v-model="showCompleteResultsOnly" style="margin-left: 20px;" active-text="Show complete tests only">
-                </el-switch>
-            </el-col>
+        <el-row :gutter="12" type="flex" justify="flex-start" style="align-items: center;">
+            <img src="@/assets/logo.png" height="35" style="margin-right: 20px;"/>
+            <el-select v-model="testDateOptions" placeholder="Select a build version" @change="selectedDateOptions=[]">
+                <el-option v-for="buildVersionOption in buildVersionOptions" :key="buildVersionOption.label" :label="buildVersionOption.label" :value="buildVersionOption.value">
+                </el-option>
+            </el-select>
+            <el-select v-model="selectedDateOptions" multiple collapse-tags style="margin-left: 20px;" placeholder="Select test date">
+                <el-option v-for="testDateOption in sortedDateOptions" :key="testDateOption.label" :label="testDateOption.label" :value="testDateOption">
+                </el-option>
+            </el-select>
+            <el-switch v-model="showCompleteResultsOnly" style="margin-left: 20px;" active-text="Show complete tests only">
+            </el-switch>
         </el-row>
     </el-card>
     <timeline :rawData="selectedDataSets" :showCompleteResultsOnly="showCompleteResultsOnly"></timeline>
