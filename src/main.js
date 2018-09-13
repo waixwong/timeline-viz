@@ -12,7 +12,6 @@ Vue.config.productionTip = false
 Vue.use(ElementUI, {
     locale
 })
-Vue.use(Vuefire)
 
 // Initialize Firebase
 
