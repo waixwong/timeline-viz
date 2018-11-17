@@ -9,9 +9,9 @@
 </template>
 
 <script>
-const vis = require('vis')
-const DistinctColors = require('distinct-colors')
-const _ = require('underscore')
+const vis = require("vis");
+const DistinctColors = require("distinct-colors");
+const _ = require("underscore");
 
 // Generate
 // http://tools.medialab.sciences-po.fr/iwanthue/
@@ -121,8 +121,10 @@ export default {
           for (const testSessionId in trackingsForDate) {
             let trackedItems = [];
 
-            const groupId = date + "-" + testSessionId.slice(-3);
             const rawTrackingData = trackingsForDate[testSessionId];
+            if (!rawTrackingData.hasOwnProperty("sequences")) continue;
+
+            const groupId = date + "-" + testSessionId.slice(-3);
 
             // Process Sequences
             const dataIsComplete =
